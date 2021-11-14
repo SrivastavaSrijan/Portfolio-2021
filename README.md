@@ -1,7 +1,3 @@
-![](https://i.imgur.com/aUVHd1c.png)
-
----
-
 ## ⚡ srijansrivastava.tech
 
 I've decided to open-source my latest portfolio website! it has dynamic content management to add projects and posts using Contentful CMS, and was built using Next.js and Chakra UI.
