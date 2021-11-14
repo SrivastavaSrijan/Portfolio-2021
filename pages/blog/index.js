@@ -57,8 +57,11 @@ export default function Index({ articles }) {
           Blog
         </Heading>
         <Text fontSize={{ base: '14px', md: '16px' }}>
-          This is where I share my writings on programming, tutorials, and my
-          experiences.
+          I have had a blog for as long as I can remember! As a kid, it was
+          always random musings. I've decided to take some of that talent and
+          redirect it toward documenting my life as a developer. Here, you'll
+          find articles on JavaScript and its quirks, Accessibility and its
+          importance, and other misc musings.
         </Text>
         <InputGroup maxW="400px">
           <InputRightElement pointerEvents="none" children={<FaSearch />} />

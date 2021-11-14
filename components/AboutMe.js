@@ -126,35 +126,66 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              I'm a 2020 pass out of the
+              Being obsessed with technology from my childhood, I made my first
+              website when I was 12 (please do not look it up 🥺). I've had the
+              privilege of working in different domains alongside companies that
+              dominate the field. I strive to capitalize on these experiences at
+              work. In the real world you can always find me tweaking the
+              perfect pasta recipe, obsessing over some music, or having a
+              coffee. <br />
+              <br />I finished at the top 10% of my class at
               <MoreInfo
-                text="Vellore Institute of Technology"
+                text="Vellore Institute of Technology,"
                 content={
                   <Polaroid
-                    imageSrc="https://i.imgur.com/x5AISLd.jpg"
+                    imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/2ivYQNDahjTccL9d6p76Tl/b1e2a291620f3af55ac08791059f0c0a/VIT.webp"
                     text="The beautiful campus in the golden hour"
                     alt="VIT Campus"
                   ></Polaroid>
                 }
               ></MoreInfo>
-              , where I majored in
+              where I majored in
               <MoreInfo
-                text="Electronics & Communication"
+                text="Electronics & Communication."
                 content={
                   <Polaroid
-                    imageSrc="https://i.imgur.com/AJ36rMh.jpg"
+                    imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/5O4i3w4FYgMcBRN94wp3nH/3358b1026eaf05ab03cced7d57cc1e9d/Breadboard.webp"
                     text="I think I've seen more breadboards than bread"
                     alt="Circuits we made at uni"
                   ></Polaroid>
                 }
+              ></MoreInfo>{' '}
+              I was a part of the executive board at a non-profit called
+              <MoreInfo
+                text="Anokha,"
+                content={
+                  <Polaroid
+                    imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/6JcomFqlW3IMkFBo2FNIuV/3299ab411e4da14878fa41f1b2ef6224/ANO.webp"
+                    text="At Scientastic, a science fair we organized for the kids of Vellore"
+                    alt="Srijan with the kids of Vellore"
+                  ></Polaroid>
+                }
               ></MoreInfo>
-              Being obsessed with technology from my childhood, I made my first
-              blog when I was 12 (please do not look it up 🥺). I've had the
-              privilege of working in different domains alongside companies that
-              dominate the field. I strive to capitalize on these experiences
-              when I work! 💪🏽 In the real world, you'll probably find me writing
-              stuff for my blog, finding the perfect pasta recipe, obsessing
-              over some music, or having a coffee.
+              and was a part of a Toastmasters International, an organization
+              aimed at boosting your public speaking
+              <MoreInfo
+                text="public speaking"
+                content={
+                  <Polaroid
+                    imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/4wdJ7AXG4mCjewPJoQNVBj/f21b33e645b3e677a2392035370b51e5/tmi.webp"
+                    text="Giving a speech at one of our weekly sessions!"
+                    alt="Srijan on the stage, delivering a speech"
+                  ></Polaroid>
+                }
+              ></MoreInfo>{' '}
+              and leadership skills.
+              <br /> <br />
+              Right now, I'm working at Wipro on an awesome Enterprise
+              Application. My role as a Developer is to architect pixel-perfect
+              modules which are compliant with Web Content Acessibility
+              Guidelines and provide an excellent end-user experience. I'm
+              conversant with ES6, Form Validation, RxJs and performance
+              optimization.
             </Text>
           </Stack>
         </SlideUpWhenVisible>
@@ -175,11 +206,11 @@ export default function AboutMe() {
                 alt=""
               />
               <Image
-                src="https://i.imgur.com/xesZKHb.png"
+                src="https://images.ctfassets.net/hq1jrfsbgjdg/5YJl4IH6gvSap977ivgeEu/bc7eef43cbac3941dc388b0299d2b5ed/MeHero.webp"
                 filter="saturate(1.1)"
                 w={{ base: '300px', lg: '350px' }}
                 h={{ base: '300px', lg: '350px' }}
-                alt="Abdul Rahman"
+                alt="Srijan Srivastava"
               />
             </Box>
           </Flex>

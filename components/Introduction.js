@@ -42,7 +42,7 @@ export default function Introduction() {
               alt=""
             ></Image>
             <Text
-              color="button1"
+              color="displayColor"
               fontSize="display2"
               fontWeight="medium"
               position="relative"
@@ -56,7 +56,7 @@ export default function Introduction() {
             fontSize="display"
             lineHeight={'95%'}
             fontSize="display"
-            color="displayColor"
+            color="button1"
             letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
             position="relative"
             zIndex={1}
@@ -83,13 +83,13 @@ export default function Introduction() {
             <TextLoop adjustingSpeed={100} delay={1700} noWrap={true}>
               {getHeroText().map(({ item, emoji, index }) => {
                 return (
-                  <span key={index}>
+                  <Text key={index} color="button1" fontWeight="light">
                     {item}
                     <span role="img" aria-label={item}>
                       {' '}
                       {emoji}
                     </span>
-                  </span>
+                  </Text>
                 )
               })}
             </TextLoop>
@@ -102,13 +102,12 @@ export default function Introduction() {
           transition={{ enter: { duration: 0.4, delay: 0.9 } }}
         >
           <Text fontSize="display3" color="textSecondary">
-            🤠 I code with accessibility, readability and performance in mind
+            🚀 Open to new, exciting opportunities
             <br />
             <Stack isInline spacing={1}>
-              <Box>🤯</Box>
+              <Box>🎓</Box>
               <Box>
-                Currently working as an Enterprise Engineering Platforms
-                developer at Wipro
+                Frontend Developer proficient with Angular, JavaScript and React
               </Box>
             </Stack>
           </Text>

@@ -23,33 +23,34 @@ export default function ContactMe() {
       >
         <SlideUpWhenVisible>
           <Heading fontSize={{ base: '4xl', md: '5xl' }} textAlign="center">
-            Keep In Touch.
+            Hit me up!
           </Heading>
         </SlideUpWhenVisible>
 
         <SlideUpWhenVisible>
           <Text fontSize="md" color="textSecondary" textAlign="center">
-            I'm currently open to work as a{' '}
+            If you're looking for a frontend developer with an eye for detail
+            and a knack for solving complex use cases, I'm open to new and
+            exciting opportunities!
             <chakra.span
               color="button1"
               display={{ base: 'block', md: 'inline' }}
             >
               {' '}
-              Front-end Developer.
+              Contact me using the links below.
             </chakra.span>
-            <br /> Let's get in touch and talk more about your projects.
           </Text>
         </SlideUpWhenVisible>
 
         <SlideUpWhenVisible>
           <Stack isInline spacing={4}>
             <Link
-              href="https://linkedin.com/in/abdulrcs"
+              href="https://www.linkedin.com/in/srijansrivastava35/"
               isExternal
               onClick={() => handleClick('contact_linkedin')}
             >
               <Button
-                leftIcon={<FaLinkedin fill="#3CCF91" />}
+                leftIcon={<FaLinkedin fill="#BEE3DB" />}
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
                 color="white"
@@ -58,13 +59,13 @@ export default function ContactMe() {
               </Button>
             </Link>
             <Link
-              href="mailto:abdulrcs1@gmail.com"
+              href="mailto:srijan.srivastava35@gmail.com"
               isExternal
               onClick={() => handleClick('contact_email')}
             >
               <Button
                 color="white"
-                leftIcon={<FaEnvelope fill="#3CCF91" />}
+                leftIcon={<FaEnvelope fill="#BEE3DB" />}
                 transition="0.3s"
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
@@ -73,12 +74,12 @@ export default function ContactMe() {
               </Button>
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1IvhcdThnfMAcPEHy6Yvq4o8vSaIi_ArV/view?usp=sharing"
+              href="https://drive.google.com/file/d/1q6X_YaarffzIsqgrJY1mxCQKHr4j2nvJ/view?usp=sharing"
               isExternal
               onClick={() => handleClick('contact_resume')}
             >
               <Button
-                leftIcon={<FaFileAlt fill="#3CCF91" />}
+                leftIcon={<FaFileAlt fill="#BEE3DB" />}
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
                 color="white"

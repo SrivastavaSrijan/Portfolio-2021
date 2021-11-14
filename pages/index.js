@@ -166,10 +166,6 @@ export async function getStaticProps() {
     limit: 4,
     order: 'sys.createdAt',
   })
-
-  let images = await client.getAsset({
-    id: '5YJl4IH6gvSap977ivgeEu',
-  })
   return {
     props: {
       projects: data.items,

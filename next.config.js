@@ -5,6 +5,7 @@ module.exports = {
       'images.unsplash.com',
       'media.giphy.com',
       'srijansrivastava.tech',
+      'images.ctfassets.net',
     ],
   },
 }

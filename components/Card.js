@@ -1,32 +1,10 @@
-import {
-  TagLeftIcon,
-  Tag,
-  Text,
-  Stack,
-  Divider,
-  TagLabel,
-  Link,
-  ScaleFade,
-  chakra,
-} from '@chakra-ui/react'
-import {
-  FaReact,
-  FaPython,
-  FaPepperHot,
-  FaJs,
-  FaSass,
-  FaCode,
-  FaGithub,
-  FaExternalLinkAlt,
-  FaLaravel,
-  FaBootstrap,
-  FaDatabase,
-} from 'react-icons/fa'
-import { SiNextDotJs } from 'react-icons/si'
-import useMediaQuery from '../hook/useMediaQuery'
+import { Text, Stack, Divider, ScaleFade, Link } from '@chakra-ui/react'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import ReactGA from 'react-ga'
 
 import Image from './ChakraNextImage'
+
+import CodeTags from './CodeTags'
 
 export default function Cards({
   imageURL,
@@ -36,54 +14,6 @@ export default function Cards({
   deployLink,
   tag,
 }) {
-  const getTag = (tag) => {
-    let values = []
-    if (tag == 'React') {
-      values[0] = 'blue'
-      values[1] = FaReact
-    } else if (tag == 'Python') {
-      values[0] = 'orange'
-      values[1] = FaPython
-    } else if (tag == 'Javascript') {
-      values[0] = 'yellow'
-      values[1] = FaJs
-    } else if (tag == 'Sass') {
-      values[0] = 'pink'
-      values[1] = FaSass
-    } else if (tag == 'Flask') {
-      values[0] = 'green'
-      values[1] = FaPepperHot
-    } else if (tag == 'Laravel') {
-      values[0] = 'red'
-      values[1] = FaLaravel
-    } else if (tag == 'Bootstrap') {
-      values[0] = 'purple'
-      values[1] = FaBootstrap
-    } else if (tag == 'SQL') {
-      values[0] = 'blue'
-      values[1] = FaDatabase
-    } else if (tag == 'Next.js') {
-      values[0] = 'gray'
-      values[1] = SiNextDotJs
-    } else {
-      values[0] = 'gray'
-      values[1] = FaCode
-    }
-    return values
-  }
-
-  const isLargerThan800 = useMediaQuery(800)
-
-  const Tags = (tag ?? [])?.map((item) => (
-    <Tag
-      key={item}
-      colorScheme={getTag(item)[0]}
-      size={isLargerThan800 ? 'md' : 'sm'}
-    >
-      <TagLeftIcon as={getTag(item)[1]}></TagLeftIcon>
-      <TagLabel>{item}</TagLabel>
-    </Tag>
-  ))
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
@@ -149,7 +79,9 @@ export default function Cards({
                 )}
               </Stack>
             </Stack>
-            <Stack isInline>{Tags}</Stack>
+            <Stack isInline>
+              <CodeTags tags={tag}></CodeTags>
+            </Stack>
             <Divider />
             <Text color="textSecondary" fontSize={['sm', 'md']}>
               {desc}

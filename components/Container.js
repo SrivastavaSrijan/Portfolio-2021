@@ -17,21 +17,28 @@ const Container = ({ enableTransition, children }) => {
       </Flex>
       <Stack alignItems="center" mt={10} mb={5}>
         <Text textAlign="center" fontSize="sm">
-          Designed and Developed by Abdul Rahman.
+          "You say we're small and not worth the mention. I'm sure we're taller
+          in another dimension. "
+          <br />— Frank Ocean
           <br />
-          Built with{' '}
           <chakra.span fontWeight="semibold" color="button1">
-            Next.js
+            Made with
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              style={{ display: 'inline-block', margin: '0 5px' }}
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            by Srijan.
           </chakra.span>{' '}
-          &{' '}
-          <chakra.span fontWeight="semibold" color="button1">
-            Chakra UI
-          </chakra.span>
-          . Hosted on{' '}
-          <chakra.span fontWeight="semibold" color="button1">
-            Vercel
-          </chakra.span>
-          .
         </Text>
       </Stack>
     </>
