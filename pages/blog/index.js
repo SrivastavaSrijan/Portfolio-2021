@@ -17,16 +17,16 @@ export default function Index({ articles }) {
   return (
     <Container>
       <Head>
-        <title>Blog - Abdul Rahman</title>
-        <meta name="title" content="Blog - Abdul Rahman" />
+        <title>Blog - Srijan Srivastava</title>
+        <meta name="title" content="Blog - Srijan Srivastava" />
         <meta
           name="description"
           content="Writings on programming, tutorials, and my experiences."
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://abdulrahman.id/blog" />
-        <meta property="og:title" content="Blog - Abdul Rahman" />
+        <meta property="og:url" content="https://srijansrivastava.tech/blog" />
+        <meta property="og:title" content="Blog - Srijan Srivastava" />
         <meta
           property="og:description"
           content="Writings on programming, tutorials, and my experiences."
@@ -34,8 +34,8 @@ export default function Index({ articles }) {
         <meta property="og:image" content="https://i.imgur.com/dWmBCSl.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://abdulrahman.id/" />
-        <meta property="twitter:title" content="Blog - Abdul Rahman" />
+        <meta property="twitter:url" content="https://srijansrivastava.tech/" />
+        <meta property="twitter:title" content="Blog - Srijan Srivastava" />
         <meta
           property="twitter:description"
           content="Writings on programming, tutorials, and my experiences."

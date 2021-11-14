@@ -20,15 +20,15 @@ export default function Post({ metadata, source, views }) {
       <NextSeo
         title={metadata.title}
         description={metadata.summary}
-        canonical={`https://abdulrahman.id/blog/${metadata.slug}`}
+        canonical={`https://srijansrivastava.tech/blog/${metadata.slug}`}
         openGraph={{
-          url: `https://abdulrahman.id/blog/${metadata.slug}`,
-          site_name: 'Abdul Rahman',
+          url: `https://srijansrivastava.tech/blog/${metadata.slug}`,
+          site_name: 'Srijan Srivastava',
           title: metadata.title,
           description: metadata.summary,
           type: 'article',
           article: {
-            authors: ['Abdul Rahman'],
+            authors: ['Srijan Srivastava'],
             publishedTime: metadata.date,
             modifiedTime: metadata.date,
             tags: ['Programming', 'Web Development', 'Software Engineering'],
@@ -44,7 +44,7 @@ export default function Post({ metadata, source, views }) {
           { property: 'twitter:card', content: 'summary_large_image' },
           {
             property: 'twitter:url',
-            content: `https://abdulrahman.id/blog/${metadata.slug}`,
+            content: `https://srijansrivastava.tech/blog/${metadata.slug}`,
           },
           { property: 'twitter:title', content: metadata.title },
           { property: 'twitter:description', content: metadata.summary },
@@ -52,13 +52,13 @@ export default function Post({ metadata, source, views }) {
         ]}
       />
       <ArticleJsonLd
-        url={`https://abdulrahman.id/blog/${metadata.slug}`}
+        url={`https://srijansrivastava.tech/blog/${metadata.slug}`}
         title={metadata.title}
         images={[metadata.image]}
         datePublished={metadata.date}
         dateModified={metadata.date}
-        authorName="Abdul Rahman"
-        publisherName="Abdul Rahman"
+        authorName="Srijan Srivastava"
+        publisherName="Srijan Srivastava"
         publisherLogo="https://i.imgur.com/CbbuXeI.png"
         description={metadata.summary}
       />
@@ -83,13 +83,13 @@ export default function Post({ metadata, source, views }) {
             >
               <Stack isInline alignItems="center">
                 <Avatar
-                  name="Abdul Rahman"
+                  name="Srijan Srivastava"
                   size="xs"
-                  src="https://i.imgur.com/CbbuXeI.png"
+                  src="https://images.ctfassets.net/hq1jrfsbgjdg/5YJl4IH6gvSap977ivgeEu/bc7eef43cbac3941dc388b0299d2b5ed/MeHero.webp?w=200"
                   border="1px solid textPrimary"
                 />
                 <Text fontSize={['xs', 'xs', 'sm', 'sm']} color="textPrimary">
-                  Abdul Rahman /{' '}
+                  Srijan Srivastava /{' '}
                   {dateFormat(Date.parse(metadata.date), 'mmmm d, yyyy')}
                 </Text>
               </Stack>

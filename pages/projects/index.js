@@ -17,18 +17,21 @@ export default function Projects({ projects }) {
     <>
       <Container>
         <Head>
-          <title>Abdul Rahman - Software Engineer</title>
-          <meta name="title" content="Abdul Rahman - Software Engineer" />
+          <title>Srijan Srivastava - Software Engineer</title>
+          <meta name="title" content="Srijan Srivastava - Software Engineer" />
           <meta
             name="description"
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
+            content="Here, you can check out Srijan Srivastava's projects, learn about his experiences, gauge his skills and know why he is the perfect candidate you’re looking for."
           />
 
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://abdulrahman.id/projects" />
+          <meta
+            property="og:url"
+            content="https://srijansrivastava.tech/projects"
+          />
           <meta
             property="og:title"
-            content="Abdul Rahman - Software Engineer"
+            content="Srijan Srivastava - Software Engineer"
           />
           <meta
             property="og:description"
@@ -39,11 +42,11 @@ export default function Projects({ projects }) {
           <meta property="twitter:card" content="summary_large_image" />
           <meta
             property="twitter:url"
-            content="https://abdulrahman.id/projects"
+            content="https://srijansrivastava.tech/projects"
           />
           <meta
             property="twitter:title"
-            content="Abdul Rahman - Software Engineer"
+            content="Srijan Srivastava - Software Engineer"
           />
           <meta
             property="twitter:description"
