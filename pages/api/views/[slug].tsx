@@ -1,4 +1,14 @@
-import firebase from 'firebase'
+import { initializeApp } from 'firebase/app';
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  QuerySnapshot,
+  DocumentData,
+  setDoc,
+  doc,
+  increment,
+} from 'firebase/firestore/lite';
 
 export default async (req, res) => {
   const firebaseConfig = {
@@ -8,27 +18,13 @@ export default async (req, res) => {
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.FIREBASE_APP_ID,
-  }
+  };
 
-  if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig)
-  } else {
-    firebase.app()
-  }
-  const slug = req.query.slug
+  const firebaseApp = initializeApp(firebaseConfig);
+  const slug = req.query.slug;
+  const db = getFirestore(firebaseApp);
 
-  const db = firebase.firestore()
-
-  const increment = firebase.firestore.FieldValue.increment(1)
-
-  const viewsRef = db.collection('views').doc(slug)
-  const views = await viewsRef.get()
-
-  if (views.exists) {
-    await viewsRef.update({ count: increment })
-    res.json({ views: views.data().count + 1 })
-  } else {
-    await viewsRef.set({ count: 1 })
-    res.json({ views: 1 })
-  }
-}
+  await setDoc(doc(db, 'views', slug), {
+    count: increment(1),
+  });
+};

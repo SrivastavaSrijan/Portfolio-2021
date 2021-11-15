@@ -6,31 +6,31 @@ import {
   Text,
   Divider,
   useColorMode,
-} from '@chakra-ui/react'
-import { jsx } from '@emotion/react'
-import NextLink from 'next/link'
-import Image from './ChakraNextImage'
+} from '@chakra-ui/react';
+import { jsx } from '@emotion/react';
+import NextLink from 'next/link';
+import Image from './ChakraNextImage';
 
 const CustomLink = (props) => {
-  const { colorMode } = useColorMode()
+  const { colorMode } = useColorMode();
   const color = {
     light: 'blue.500',
     dark: 'blue.500',
-  }
+  };
 
-  const href = props.href
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
+  const href = props.href;
+  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
     return (
       <NextLink href={href} passHref>
         <Link color={color[colorMode]} {...props} />
       </NextLink>
-    )
+    );
   }
 
-  return <Link color={color[colorMode]} isExternal {...props} />
-}
+  return <Link color={color[colorMode]} isExternal {...props} />;
+};
 
 const DocsHeading = (props) => (
   <Heading
@@ -75,17 +75,17 @@ const DocsHeading = (props) => (
       )}
     </Box>
   </Heading>
-)
+);
 
 const Hr = () => {
-  const { colorMode } = useColorMode()
+  const { colorMode } = useColorMode();
   const borderColor = {
     light: 'gray.200',
     dark: 'gray.600',
-  }
+  };
 
-  return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />
-}
+  return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />;
+};
 
 const MDXComponents = {
   h1: (props) => (
@@ -118,7 +118,7 @@ const MDXComponents = {
   ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   li: (props) => <Box as="li" pb={1} {...props} />,
-}
+};
 
-export { CustomLink }
-export default MDXComponents
+export { CustomLink };
+export default MDXComponents;

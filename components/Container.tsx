@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
-import { chakra, Flex, Stack, Text } from '@chakra-ui/react'
-import Navbar from './Navbar'
-import ReactGA from 'react-ga'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
+import React, { useEffect } from 'react';
+import { chakra, Flex, Stack, Text } from '@chakra-ui/react';
+import Navbar from './Navbar';
+import ReactGA from 'react-ga';
+import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 
 const Container = ({ enableTransition, children }) => {
   useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
+    ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <>
@@ -45,7 +45,7 @@ const Container = ({ enableTransition, children }) => {
         </Stack>
       </SlideUpWhenVisible>
     </>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

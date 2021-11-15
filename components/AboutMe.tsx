@@ -16,22 +16,22 @@ import {
   PopoverArrow,
   CircularProgress,
   CircularProgressLabel,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import useMediaQuery from '../hook/useMediaQuery'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import ReactGA from 'react-ga'
+import useMediaQuery from '../hook/useMediaQuery';
+import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
+import ReactGA from 'react-ga';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function AboutMe() {
-  const isLargerThan800 = useMediaQuery(800)
+  const isLargerThan800 = useMediaQuery(800);
   const handleHover = (event) => {
     ReactGA.event({
       category: 'hover',
       action: event,
-    })
-  }
+    });
+  };
   const MoreInfo = ({ text, content }) => {
     return (
       <>
@@ -63,8 +63,8 @@ export default function AboutMe() {
           </Text>
         )}{' '}
       </>
-    )
-  }
+    );
+  };
 
   /**
    * Component to render a polaroid type box
@@ -74,7 +74,7 @@ export default function AboutMe() {
    * @returns
    */
   const Polaroid = ({ imageSrc, alt, text }) => {
-    const [isLoaded, setLoaded] = useState(false)
+    const [isLoaded, setLoaded] = useState(false);
     return (
       <>
         <PopoverBody fontSize="sm" padding="0">
@@ -111,8 +111,8 @@ export default function AboutMe() {
           </Text>
         </PopoverFooter>
       </>
-    )
-  }
+    );
+  };
   return (
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
@@ -217,5 +217,5 @@ export default function AboutMe() {
         </SlideUpWhenVisible>
       </SimpleGrid>
     </>
-  )
+  );
 }

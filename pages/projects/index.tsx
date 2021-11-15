@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import {
   Stack,
   Heading,
@@ -6,19 +6,19 @@ import {
   SimpleGrid,
   Divider,
   SlideFade,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import Cards from '../../components/Card'
-import Container from '../../components/Container'
-import Head from 'next/head'
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import { FaSearch } from 'react-icons/fa'
+import Cards from '../../components/Card';
+import Container from '../../components/Container';
+import Head from 'next/head';
+import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
+import { FaSearch } from 'react-icons/fa';
 
 export default function Projects({ projects }) {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('');
   const handleChange = (e) => {
-    setQuery(e.target.value)
-  }
+    setQuery(e.target.value);
+  };
 
   return (
     <>
@@ -130,22 +130,22 @@ export default function Projects({ projects }) {
         </Stack>
       </Container>
     </>
-  )
+  );
 }
 
 const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: 'projects',
     order: 'sys.updatedAt',
-  })
+  });
   return {
     props: {
       projects: data.items.reverse(),
     },
-  }
+  };
 }

@@ -1,10 +1,10 @@
-import { Text, Stack, Divider, ScaleFade, Link } from '@chakra-ui/react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import ReactGA from 'react-ga'
+import { Text, Stack, Divider, ScaleFade, Link } from '@chakra-ui/react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import ReactGA from 'react-ga';
 
-import Image from './ChakraNextImage'
+import Image from './ChakraNextImage';
 
-import CodeTags from './CodeTags'
+import CodeTags from './CodeTags';
 
 export default function Cards({
   imageURL,
@@ -19,9 +19,9 @@ export default function Cards({
     ReactGA.event({
       category: 'click',
       action: event,
-    })
-  }
-  let mdxSource = null
+    });
+  };
+  let mdxSource = null;
   return (
     <Stack
       bg="secondary"
@@ -91,5 +91,5 @@ export default function Cards({
         </ScaleFade>
       </Link>
     </Stack>
-  )
+  );
 }

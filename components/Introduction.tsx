@@ -7,21 +7,21 @@ import {
   Button,
   SlideFade,
   Image,
-} from '@chakra-ui/react'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
-import useMediaQuery from '../hook/useMediaQuery'
-import ReactGA from 'react-ga'
-import TextLoop from 'react-text-loop'
-import { getHeroText } from '../globalData'
+} from '@chakra-ui/react';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import useMediaQuery from '../hook/useMediaQuery';
+import ReactGA from 'react-ga';
+import TextLoop from 'react-text-loop';
+import { getHeroText } from '../globalData';
 
 export default function Introduction() {
-  const isLargerThan800 = useMediaQuery(800)
+  const isLargerThan800 = useMediaQuery(800);
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
       action: event,
-    })
-  }
+    });
+  };
   return (
     <>
       <Stack spacing={10} justifyContent="flex-start" alignItems="flex-start">
@@ -86,7 +86,7 @@ export default function Introduction() {
                       {emoji}
                     </span>
                   </Text>
-                )
+                );
               })}
             </TextLoop>
           </Heading>
@@ -153,5 +153,5 @@ export default function Introduction() {
         </SlideFade>
       </Stack>
     </>
-  )
+  );
 }

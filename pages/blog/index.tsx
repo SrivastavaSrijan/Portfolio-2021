@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import {
   Stack,
   Heading,
@@ -7,20 +7,20 @@ import {
   Flex,
   Box,
   SlideFade,
-} from '@chakra-ui/react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Container from '../../components/Container'
-import { FaSearch } from 'react-icons/fa'
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import useMediaQuery from '../../hook/useMediaQuery'
-import readingTime from 'reading-time'
-import dateFormat from 'dateformat'
+} from '@chakra-ui/react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Container from '../../components/Container';
+import { FaSearch } from 'react-icons/fa';
+import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
+import useMediaQuery from '../../hook/useMediaQuery';
+import readingTime from 'reading-time';
+import dateFormat from 'dateformat';
 
 export default function Index({ articles }) {
-  const [query, setQuery] = useState('')
-  const handleChange = (e) => setQuery(e.target.value)
-  const isLargerThan1024 = useMediaQuery(1024)
+  const [query, setQuery] = useState('');
+  const handleChange = (e) => setQuery(e.target.value);
+  const isLargerThan1024 = useMediaQuery(1024);
 
   return (
     <Container enableTransition={true}>
@@ -154,24 +154,24 @@ export default function Index({ articles }) {
         </SlideFade>
       </Stack>
     </Container>
-  )
+  );
 }
 
 const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: 'blogPosts',
     limit: 50,
     order: 'sys.createdAt',
-  })
+  });
 
   return {
     props: {
       articles: data.items.reverse(),
     },
-  }
+  };
 }

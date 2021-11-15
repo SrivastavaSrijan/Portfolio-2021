@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import { Stack } from '@chakra-ui/react'
+import styled from '@emotion/styled';
+import { Stack } from '@chakra-ui/react';
 
 const PostContainer = styled(Stack)`
   &&& {
@@ -30,5 +30,5 @@ const PostContainer = styled(Stack)`
       margin: auto;
     }
   }
-`
-export default PostContainer
+`;
+export default PostContainer;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 import {
   Button,
   Flex,
@@ -14,20 +14,20 @@ import {
   DrawerBody,
   Stack,
   Icon,
-} from '@chakra-ui/react'
-import NextLink from 'next/link'
-import styled from '@emotion/styled'
-import useMediaQuery from '../hook/useMediaQuery'
-import { AiOutlineMenu } from 'react-icons/ai'
+} from '@chakra-ui/react';
+import NextLink from 'next/link';
+import styled from '@emotion/styled';
+import useMediaQuery from '../hook/useMediaQuery';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 export default function Navbar({ enableTransition }) {
-  const isLargerThan768 = useMediaQuery(768)
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const firstField = useRef()
+  const isLargerThan768 = useMediaQuery(768);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const firstField = useRef();
   const Bracket = styled.span`
     color: #8f9094;
     font-weight: 600;
-  `
+  `;
   const NavbarDrawer = () => (
     <>
       <Drawer
@@ -68,7 +68,7 @@ export default function Navbar({ enableTransition }) {
         </DrawerContent>
       </Drawer>
     </>
-  )
+  );
 
   return (
     <Box zIndex="99">
@@ -122,5 +122,5 @@ export default function Navbar({ enableTransition }) {
       </Slide>
       <NavbarDrawer />
     </Box>
-  )
+  );
 }

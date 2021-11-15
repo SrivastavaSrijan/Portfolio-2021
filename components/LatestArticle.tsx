@@ -1,8 +1,8 @@
-import { Heading } from '@chakra-ui/layout'
-import { Box, Flex, Link, Stack, Text, SimpleGrid } from '@chakra-ui/react'
-import dateFormat from 'dateformat'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import NextLink from 'next/link'
+import { Heading } from '@chakra-ui/layout';
+import { Box, Flex, Link, Stack, Text, SimpleGrid } from '@chakra-ui/react';
+import dateFormat from 'dateformat';
+import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
+import NextLink from 'next/link';
 
 export default function LatestArticle({ articles }) {
   return (
@@ -78,5 +78,5 @@ export default function LatestArticle({ articles }) {
         ))}
       </SimpleGrid>
     </Stack>
-  )
+  );
 }

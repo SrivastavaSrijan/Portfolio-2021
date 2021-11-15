@@ -1,7 +1,7 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import customTheme from '../styles/theme'
-import { Global, css } from '@emotion/react'
-import { prismDarkTheme } from '../styles/prism'
+import { ChakraProvider } from '@chakra-ui/react';
+import customTheme from '../styles/theme';
+import { Global, css } from '@emotion/react';
+import { prismDarkTheme } from '../styles/prism';
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -38,8 +38,8 @@ const GlobalStyle = ({ children }) => {
       />
       {children}
     </>
-  )
-}
+  );
+};
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -48,6 +48,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </GlobalStyle>
     </ChakraProvider>
-  )
+  );
 }
-export default MyApp
+export default MyApp;

@@ -6,19 +6,19 @@ import {
   SimpleGrid,
   Flex,
   Box,
-} from '@chakra-ui/layout'
-import NextLink from 'next/link'
-import Cards from './Card'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import ReactGA from 'react-ga'
+} from '@chakra-ui/layout';
+import NextLink from 'next/link';
+import Cards from './Card';
+import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
+import ReactGA from 'react-ga';
 
 export default function FeaturedProjects({ projects }) {
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
       action: event,
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -110,5 +110,5 @@ export default function FeaturedProjects({ projects }) {
         </SimpleGrid>
       </Stack>
     </>
-  )
+  );
 }

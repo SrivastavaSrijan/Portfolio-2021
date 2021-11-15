@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react'
-import { Avatar, Text, Heading, Stack } from '@chakra-ui/react'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
+import { useEffect, useState } from 'react';
+import { Avatar, Text, Heading, Stack } from '@chakra-ui/react';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
 
-import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 
-import mdxPrism from 'mdx-prism'
-import dateFormat from 'dateformat'
-import readingTime from 'reading-time'
+import mdxPrism from 'mdx-prism';
+import dateFormat from 'dateformat';
+import readingTime from 'reading-time';
 
-import Image from '../../components/ChakraNextImage'
-import Container from '../../components/Container'
-import PostContainer from '../../components/PostContainer'
-import MDXComponents from '../../components/MDXComponents'
+import Image from '../../components/ChakraNextImage';
+import Container from '../../components/Container';
+import PostContainer from '../../components/PostContainer';
+import MDXComponents from '../../components/MDXComponents';
 
 export default function Post({ metadata, source, views }) {
   return (
@@ -126,46 +126,46 @@ export default function Post({ metadata, source, views }) {
         </Stack>
       </Container>
     </>
-  )
+  );
 }
 
 const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export async function getStaticPaths() {
   const data = await client.getEntries({
     content_type: 'blogPosts',
-  })
+  });
   return {
     paths: data.items.map((item) => ({
       params: { slug: item.fields.slug },
     })),
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
   const data = await client.getEntries({
     content_type: 'blogPosts',
     'fields.slug': params.slug,
-  })
+  });
 
-  const article = data.items[0].fields
-  const source = article.body
-  article.readingTime = readingTime(source).text
+  const article = data.items[0].fields;
+  const source = article.body;
+  article.readingTime = readingTime(source).text;
   const mdxSource = await serialize(source, {
     mdxOptions: {
       rehypePlugins: [mdxPrism],
     },
-  })
+  });
 
   const views = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${params.slug}`,
   )
     .then((res) => res.json())
-    .then((json) => json.views)
+    .then((json) => json.views);
 
   return {
     props: {
@@ -174,5 +174,5 @@ export async function getStaticProps({ params }) {
       views: views,
     },
     revalidate: 30,
-  }
+  };
 }

@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import { Stack } from '@chakra-ui/react'
-import Container from '../components/Container'
-import Introduction from '../components/Introduction'
-import FeaturedProjects from '../components/FeaturedProjects'
-import LatestArticle from '../components/LatestArticle'
-import AboutMe from '../components/AboutMe'
-import ContactMe from '../components/ContactMe'
+import Head from 'next/head';
+import { Stack } from '@chakra-ui/react';
+import Container from '../components/Container';
+import Introduction from '../components/Introduction';
+import FeaturedProjects from '../components/FeaturedProjects';
+import LatestArticle from '../components/LatestArticle';
+import AboutMe from '../components/AboutMe';
+import ContactMe from '../components/ContactMe';
 
 export default function Index({ projects, articles }) {
   return (
@@ -148,29 +148,29 @@ export default function Index({ projects, articles }) {
         </Stack>
       </Container>
     </>
-  )
+  );
 }
 
 const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: 'featuredProjects',
     order: 'fields.order',
-  })
+  });
 
   const data2 = await client.getEntries({
     content_type: 'blogPosts',
     limit: 4,
     order: 'sys.createdAt',
-  })
+  });
   return {
     props: {
       projects: data.items,
       articles: data2.items.reverse(),
     },
-  }
+  };
 }
