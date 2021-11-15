@@ -1,6 +1,6 @@
-import { theme as chakraTheme } from '@chakra-ui/react'
-import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
+import { theme as chakraTheme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 // Fluid Typography.
 // font-size  = calc(ZZ + ((1vw - XX) * YY))
@@ -12,14 +12,14 @@ import { createBreakpoints } from '@chakra-ui/theme-tools'
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: false,
-}
+};
 
 const fluidType = (minFont, maxFont) => {
-  const XX = 768 / 100
-  const YY = (100 * (maxFont - minFont)) / (1920 - 768)
-  const ZZ = minFont / 16
-  return `calc(${ZZ}rem + ((1vw - ${XX}px) * ${YY}))`
-}
+  const XX = 768 / 100;
+  const YY = (100 * (maxFont - minFont)) / (1920 - 768);
+  const ZZ = minFont / 16;
+  return `calc(${ZZ}rem + ((1vw - ${XX}px) * ${YY}))`;
+};
 
 const colors = {
   background: '#FAF9F9',
@@ -32,13 +32,13 @@ const colors = {
   button2: '#ffa69e',
   button3: '#ff686b',
   borderColor: 'transparent',
-}
+};
 
 const fonts = {
   ...chakraTheme.fonts,
   body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
   heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-}
+};
 
 const breakpoints = createBreakpoints({
   base: '0em',
@@ -46,14 +46,14 @@ const breakpoints = createBreakpoints({
   md: '48em',
   lg: '80em',
   xl: '80em',
-})
+});
 
 const Link = {
   baseStyle: {
     color: '#BEE3DB',
     _hover: { color: '#F6A20E', textDecoration: 'none' },
   },
-}
+};
 
 const overrides = {
   ...chakraTheme,
@@ -70,24 +70,12 @@ const overrides = {
     bold: 700,
   },
   fontSizes: {
-    xs: fluidType(6, 12),
-    sm: fluidType(7, 14),
-    md: fluidType(8, 16),
-    lg: fluidType(9, 18),
-    xl: fluidType(10, 20),
-    '2xl': fluidType(12, 24),
-    '3xl': fluidType(14, 28),
-    '4xl': fluidType(18, 36),
-    '5xl': fluidType(20, 40),
-    '6xl': fluidType(24, 48),
-    '7xl': fluidType(32, 64),
-    '8xl': fluidType(36, 72),
     display: fluidType(80, 144),
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
   },
-}
+};
 
-const customTheme = extendTheme(overrides)
+const customTheme = extendTheme(overrides);
 
-export default customTheme
+export default customTheme;
