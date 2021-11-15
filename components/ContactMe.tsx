@@ -28,10 +28,16 @@ export default function ContactMe() {
         </SlideUpWhenVisible>
 
         <SlideUpWhenVisible>
-          <Text fontSize="md" color="textSecondary" textAlign="center">
+          <Text
+            fontSize="md"
+            color="textSecondary"
+            textAlign="center"
+            maxW="32rem"
+          >
             If you're looking for a frontend developer with an eye for detail
             and a knack for solving complex use cases, I'm open to new and
             exciting opportunities!
+            <br />
             <chakra.span
               color="button1"
               display={{ base: 'block', md: 'inline' }}

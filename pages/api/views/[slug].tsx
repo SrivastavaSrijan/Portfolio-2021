@@ -1,7 +1,7 @@
 import firebase from 'firebase'
 
 export default async (req, res) => {
-  var firebaseConfig = {
+  const firebaseConfig = {
     apiKey: process.env.FIREBASE_REACT_APP_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     projectId: process.env.FIREBASE_PROJECT_ID,

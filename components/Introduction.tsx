@@ -26,7 +26,6 @@ export default function Introduction() {
     <>
       <Stack spacing={10} justifyContent="flex-start" alignItems="flex-start">
         <SlideFade
-          direction="top"
           in={true}
           transition={{ enter: { duration: 0.4, delay: 0.7 } }}
         >
@@ -52,10 +51,8 @@ export default function Introduction() {
             </Text>
           </Box>
           <Heading
-            color="textPrimary"
             fontSize="display"
             lineHeight={'95%'}
-            fontSize="display"
             color="button1"
             letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
             position="relative"
@@ -66,7 +63,6 @@ export default function Introduction() {
         </SlideFade>
 
         <SlideFade
-          direction="top"
           in={true}
           transition={{ enter: { duration: 0.4, delay: 0.8 } }}
         >
@@ -81,9 +77,9 @@ export default function Introduction() {
               and I'm
             </Box>{' '}
             <TextLoop adjustingSpeed={100} delay={1700} noWrap={true}>
-              {getHeroText().map(({ item, emoji, index }) => {
+              {getHeroText().map(({ item, emoji, key, index }) => {
                 return (
-                  <Text key={index} color="button1" fontWeight="light">
+                  <Text key={key} color="button1" fontWeight="light">
                     {item}
                     <span role="img" aria-label={item}>
                       {' '}
@@ -97,7 +93,6 @@ export default function Introduction() {
         </SlideFade>
 
         <SlideFade
-          direction="top"
           in={true}
           transition={{ enter: { duration: 0.4, delay: 0.9 } }}
         >
@@ -113,7 +108,6 @@ export default function Introduction() {
           </Text>
         </SlideFade>
         <SlideFade
-          direction="top"
           in={true}
           transition={{ enter: { duration: 0.4, delay: 1.0 } }}
         >

@@ -13,9 +13,19 @@ export default function LatestArticle({ articles }) {
     >
       <SlideUpWhenVisible>
         <Flex alignItems="center" justifyContent="space-between">
-          <Heading fontSize={{ base: 'xl', md: '2xl' }} fontFamily="Ubuntu">
-            📰 Latest Article.
-          </Heading>
+          <Stack spacing={1}>
+            <Heading fontSize={{ base: 'xl', md: '2xl' }} fontFamily="Ubuntu">
+              Check out my musings
+            </Heading>
+            <Text
+              fontSize={{ base: 'md', md: 'xl' }}
+              color="textSecondary"
+              maxW="32rem"
+            >
+              I've had some sort of a journal for as long as I can remember!
+              Some of my articles make the cut and I post them here.
+            </Text>
+          </Stack>
           <NextLink href="/projects">
             <Link>
               <Text fontSize={{ base: 'sm', md: 'md' }}>

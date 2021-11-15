@@ -12,6 +12,7 @@ export default function Cards({
   desc,
   githubLink,
   deployLink,
+  isFeatured,
   tag,
 }) {
   const handleClick = (event) => {
@@ -20,7 +21,7 @@ export default function Cards({
       action: event,
     })
   }
-
+  let mdxSource = null
   return (
     <Stack
       bg="secondary"
@@ -31,7 +32,7 @@ export default function Cards({
       borderColor={{ base: '#333', md: 'borderColor' }}
     >
       <Link href={deployLink} isExternal>
-        <ScaleFade in={true} transition={{ duration: 1 }}>
+        <ScaleFade in={true} transition={{ enter: { delay: 1 } }}>
           <Image
             width={1250}
             height={600}

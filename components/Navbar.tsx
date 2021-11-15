@@ -41,7 +41,7 @@ export default function Navbar({ enableTransition }) {
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth="1px">
             <Image
-              src="./media/android-chrome-512x512.png"
+              src="/media/android-chrome-512x512.png"
               w={{ base: '32px', md: '64px' }}
             ></Image>
           </DrawerHeader>
@@ -74,14 +74,12 @@ export default function Navbar({ enableTransition }) {
     <Box zIndex="99">
       <Slide
         direction="top"
-        reverse
         in={true}
         transition={
           enableTransition
             ? { enter: { duration: 0.5, delay: 0.01 } }
             : { enter: { duration: 0, delay: 0 } }
         }
-        background="black"
       >
         <Flex
           as="nav"
@@ -95,7 +93,7 @@ export default function Navbar({ enableTransition }) {
         >
           <NextLink href="/" passHref>
             <Image
-              src="./media/android-chrome-512x512.png"
+              src="/media/android-chrome-512x512.png"
               w={{ base: '32px', md: '48px' }}
             ></Image>
           </NextLink>

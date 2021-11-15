@@ -1,6 +1,7 @@
-import { TagLeftIcon, Tag, TagLabel, Link } from '@chakra-ui/react'
+import { TagLeftIcon, Tag, TagLabel, Link, As } from '@chakra-ui/react'
 import { FaReact, FaJs, FaSass, FaCode, FaGithub, FaJava } from 'react-icons/fa'
-import { SiNextDotJs } from 'react-icons/si'
+import { IconType } from 'react-icons/lib'
+import { SiNextdotjs } from 'react-icons/si'
 
 import useMediaQuery from '../hook/useMediaQuery'
 export default function CodeTags({ tags }) {
@@ -13,7 +14,7 @@ export default function CodeTags({ tags }) {
       case 'Sass':
         return ['pink', FaSass]
       case 'Next.js':
-        return ['grey', SiNextDotJs]
+        return ['grey', SiNextdotjs]
       case 'React':
         return ['blue', FaReact]
       case 'React':
@@ -34,10 +35,10 @@ export default function CodeTags({ tags }) {
   return (tags ?? [])?.map((item) => (
     <Tag
       key={item}
-      colorScheme={getTag(item)[0]}
+      colorScheme={getTag(item)[0] as string}
       size={isLargerThan800 ? 'md' : 'sm'}
     >
-      <TagLeftIcon as={getTag(item)[1]}></TagLeftIcon>
+      <TagLeftIcon as={getTag(item)[1] as As<IconType>}></TagLeftIcon>
       <TagLabel>{item}</TagLabel>
     </Tag>
   ))

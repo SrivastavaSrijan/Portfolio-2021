@@ -12,6 +12,7 @@ export default function Index({ projects, articles }) {
     <>
       <Container enableTransition={true}>
         <Head>
+          <title>Srijan Srivastava | Portfolio</title>
           <meta charSet="utf-8" />
           <meta content="en" name="Language" />
           <meta
@@ -31,7 +32,7 @@ export default function Index({ projects, articles }) {
           />
           <meta
             name="image"
-            content="./media/preview.jpg"
+            content="/media/preview.jpg"
             prefix="og: http://ogp.me/ns#"
             property="og:image"
           />
@@ -57,76 +58,76 @@ export default function Index({ projects, articles }) {
           <link
             rel="apple-touch-icon"
             sizes="57x57"
-            href="./media/apple-icon-57x57.png"
+            href="/media/apple-icon-57x57.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="60x60"
-            href="./media/apple-icon-60x60.png"
+            href="/media/apple-icon-60x60.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="72x72"
-            href="./media/apple-icon-72x72.png"
+            href="/media/apple-icon-72x72.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="76x76"
-            href="./media/apple-icon-76x76.png"
+            href="/media/apple-icon-76x76.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="114x114"
-            href="./media/apple-icon-114x114.png"
+            href="/media/apple-icon-114x114.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="120x120"
-            href="./media/apple-icon-120x120.png"
+            href="/media/apple-icon-120x120.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="144x144"
-            href="./media/apple-icon-144x144.png"
+            href="/media/apple-icon-144x144.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="./media/apple-icon-152x152.png"
+            href="/media/apple-icon-152x152.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="./media/apple-icon-180x180.png"
+            href="/media/apple-icon-180x180.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="192x192"
-            href="./media/android-icon-192x192.png"
+            href="/media/android-icon-192x192.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="./media/favicon-32x32.png"
+            href="/media/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="./media/favicon-96x96.png"
+            href="/media/favicon-96x96.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="./media/favicon-16x16.png"
+            href="/media/favicon-16x16.png"
           />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta
             name="msapplication-TileImage"
-            content="./media/ms-icon-144x144.png"
+            content="/media/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#ffffff" />
         </Head>
@@ -150,18 +151,18 @@ export default function Index({ projects, articles }) {
   )
 }
 
-let client = require('contentful').createClient({
+const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
 export async function getStaticProps() {
-  let data = await client.getEntries({
+  const data = await client.getEntries({
     content_type: 'featuredProjects',
     order: 'fields.order',
   })
 
-  let data2 = await client.getEntries({
+  const data2 = await client.getEntries({
     content_type: 'blogPosts',
     limit: 4,
     order: 'sys.createdAt',

@@ -8,17 +8,17 @@ export const getRandomIndex = (max, min = 0) =>
  * Get the hero text
  */
 const heroText = [
-  { item: 'constantly rebranding', emoji: '🚀' },
-  { item: 'probably having a coffee', emoji: '☕' },
-  { item: 'trying to innovate', emoji: '🧪' },
-  { item: 'resilient by definition', emoji: '🐜' },
-  { item: 'always growing', emoji: '🌱' },
-  { item: 'coding for fun', emoji: '🥴' },
-  { item: 'coding for peace', emoji: '😌' },
-  { item: 'coding for personal growth', emoji: '🤓' },
-  { item: 'a writer', emoji: '🖋️' },
-  { item: 'a social worker', emoji: '🥰' },
-  { item: 'a self-proclaimed cook', emoji: '👨‍🍳' },
+  { key: 1, item: 'constantly rebranding', emoji: '🚀' },
+  { key: 2, item: 'probably having a coffee', emoji: '☕' },
+  { key: 3, item: 'trying to innovate', emoji: '🧪' },
+  { key: 4, item: 'resilient by definition', emoji: '🐜' },
+  { key: 5, item: 'always growing', emoji: '🌱' },
+  { key: 6, item: 'coding for fun', emoji: '🥴' },
+  { key: 7, item: 'coding for peace', emoji: '😌' },
+  { key: 8, item: 'coding for personal growth', emoji: '🤓' },
+  { key: 9, item: 'a writer', emoji: '🖋️' },
+  { key: 10, item: 'a social worker', emoji: '🥰' },
+  { key: 11, item: 'a self-proclaimed cook', emoji: '👨‍🍳' },
 ]
 
 export const getHeroText = () => heroText

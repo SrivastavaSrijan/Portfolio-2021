@@ -18,7 +18,7 @@ export default function Post({ metadata, source, views }) {
   return (
     <>
       <NextSeo
-        title={metadata.title}
+        title={'Srijan Srivastava | Portfolio | Blog | ' + metadata.title}
         description={metadata.summary}
         canonical={`https://srijansrivastava.tech/blog/${metadata.slug}`}
         openGraph={{
@@ -62,7 +62,7 @@ export default function Post({ metadata, source, views }) {
         publisherLogo="https://i.imgur.com/CbbuXeI.png"
         description={metadata.summary}
       />
-      <Container>
+      <Container enableTransition={true}>
         <Stack my="15vh" justifyContent="center" alignItems="center">
           <Stack
             w={['100vw', '95vw']}
@@ -129,13 +129,13 @@ export default function Post({ metadata, source, views }) {
   )
 }
 
-let client = require('contentful').createClient({
+const client = require('contentful').createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
 export async function getStaticPaths() {
-  let data = await client.getEntries({
+  const data = await client.getEntries({
     content_type: 'blogPosts',
   })
   return {
@@ -147,7 +147,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  let data = await client.getEntries({
+  const data = await client.getEntries({
     content_type: 'blogPosts',
     'fields.slug': params.slug,
   })

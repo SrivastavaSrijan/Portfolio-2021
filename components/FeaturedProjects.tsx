@@ -36,7 +36,7 @@ export default function FeaturedProjects({ projects }) {
                   color="displayColor"
                   fontFamily="Ubuntu"
                 >
-                  Check out my projects!
+                  I'm very proud of these...
                 </Heading>
                 <NextLink href="/projects" passHref>
                   <Link
@@ -55,8 +55,8 @@ export default function FeaturedProjects({ projects }) {
                 </NextLink>
               </Stack>
               <Text fontSize={{ base: 'md', md: 'xl' }} color="textSecondary">
-                I love creating my own web applications whenever I'm free. Here
-                are some I've worked on!
+                Late nights and coffee runs have helped me outthink and
+                conceptualize new applications. Here are some of my capstones!
               </Text>
               <NextLink href="/projects">
                 <Link
@@ -79,6 +79,7 @@ export default function FeaturedProjects({ projects }) {
               desc={projects[0].fields.description}
               githubLink={projects[0].fields.githubLink}
               deployLink={projects[0].fields.deployLink}
+              isFeatured={true}
               tag={projects[0].fields.tags}
             />
           </SlideUpWhenVisible>
@@ -90,6 +91,7 @@ export default function FeaturedProjects({ projects }) {
                 desc={projects[1].fields.description}
                 githubLink={projects[1].fields.githubLink}
                 deployLink={projects[1].fields.deployLink}
+                isFeatured={true}
                 tag={projects[1].fields.tags}
               />
             </Box>
@@ -101,6 +103,7 @@ export default function FeaturedProjects({ projects }) {
               desc={projects[2].fields.description}
               githubLink={projects[2].fields.githubLink}
               deployLink={projects[2].fields.deployLink}
+              isFeatured={true}
               tag={projects[2].fields.tags}
             />
           </SlideUpWhenVisible>
