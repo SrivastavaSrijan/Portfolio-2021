@@ -164,14 +164,15 @@ export async function getStaticProps({ params }) {
   const views = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${params.slug}`,
   )
-    .then((res) => res.json())
-    .then((json) => json.views);
+    .then((res) => res?.json())
+    .then((json) => json?.views)
+    .catch((error) => console.log(error));
 
   return {
     props: {
       metadata: article,
       source: mdxSource,
-      views: views,
+      views: views ?? 0,
     },
     revalidate: 30,
   };
