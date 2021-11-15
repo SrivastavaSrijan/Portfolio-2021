@@ -1,13 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import {
   getFirestore,
-  collection,
-  getDocs,
-  QuerySnapshot,
-  DocumentData,
-  setDoc,
   doc,
   increment,
+  updateDoc,
+  getDoc,
 } from 'firebase/firestore/lite';
 
 export default async (req, res) => {
@@ -24,7 +21,9 @@ export default async (req, res) => {
   const slug = req.query.slug;
   const db = getFirestore(firebaseApp);
 
-  await setDoc(doc(db, 'views', slug), {
+  await updateDoc(doc(db, 'views', slug), {
     count: increment(1),
   });
+  const viewCount = await getDoc(doc(db, 'views', slug));
+  res.json({ views: viewCount.get('count') });
 };
