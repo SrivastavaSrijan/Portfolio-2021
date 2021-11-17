@@ -23,6 +23,9 @@ import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
 
 import { useState } from 'react';
+import { colors } from '../styles/theme';
+import ScrollWithReveal from '../hook/ScrollWithReveal';
+import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 
 export default function AboutMe() {
   const isLargerThan800 = useMediaQuery(800);
@@ -116,14 +119,23 @@ export default function AboutMe() {
   return (
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-        <SlideUpWhenVisible>
-          <Stack spacing={4}>
-            <Heading fontFamily="Ubuntu" fontSize="2xl">
-              ⚡ About Me
+        <Stack spacing={4}>
+          <SlideUpWhenVisible>
+            <Heading
+              fontSize="display"
+              lineHeight={'95%'}
+              color="button1"
+              letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+              position="relative"
+              zIndex={1}
+            >
+              About Me
             </Heading>
+          </SlideUpWhenVisible>
+          <FadeInWhenVisible>
             <Text
               color="textSecondary"
-              fontSize={{ base: '14px', md: '16px' }}
+              fontSize="display3"
               whiteSpace="pre-line"
             >
               Being obsessed with technology from my childhood, I made my first
@@ -187,24 +199,30 @@ export default function AboutMe() {
               conversant with ES6, Form Validation, RxJs and performance
               optimization.
             </Text>
-          </Stack>
-        </SlideUpWhenVisible>
-        <SlideUpWhenVisible>
-          <Flex alignItems="center" justifyContent="center" position="relative">
-            <Box
-              maxW={{ base: '300px', lg: '350px' }}
-              maxH={{ base: '300px', lg: '350px' }}
+          </FadeInWhenVisible>
+        </Stack>
+        <Flex alignItems="center" justifyContent="center" position="relative">
+          <Box
+            maxW={{ base: '300px', lg: '350px' }}
+            maxH={{ base: '300px', lg: '350px' }}
+          >
+            <ScrollWithReveal
+              inputRange={isLargerThan800 ? [0.1, 0.5] : [0, 2]}
+              outputRange={isLargerThan800 ? [1, 1.5] : [0.5, 2]}
             >
               <Image
-                src="https://svgsilh.com/svg/26432.svg"
-                filter="invert(0.1)"
-                zIndex={3}
+                src={`https://svgsilh.com/svg/26432-${colors.complement.replace(
+                  '#',
+                  '',
+                )}.svg`}
+                zIndex={1}
                 position="absolute"
                 top={0}
                 right={0}
                 w={{ base: '100px', lg: '150px' }}
                 alt=""
               />
+
               <Image
                 src="https://images.ctfassets.net/hq1jrfsbgjdg/5YJl4IH6gvSap977ivgeEu/bc7eef43cbac3941dc388b0299d2b5ed/MeHero.webp"
                 filter="saturate(1.1)"
@@ -212,9 +230,9 @@ export default function AboutMe() {
                 h={{ base: '300px', lg: '350px' }}
                 alt="Srijan Srivastava"
               />
-            </Box>
-          </Flex>
-        </SlideUpWhenVisible>
+            </ScrollWithReveal>
+          </Box>
+        </Flex>
       </SimpleGrid>
     </>
   );

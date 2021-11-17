@@ -13,6 +13,9 @@ import useMediaQuery from '../hook/useMediaQuery';
 import ReactGA from 'react-ga';
 import TextLoop from 'react-text-loop';
 import { getHeroText } from '../globalData';
+import { colors } from '../styles/theme';
+import StaggerChild from '../hook/IntroductionTransitions';
+import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 
 export default function Introduction() {
   const isLargerThan800 = useMediaQuery(800);
@@ -25,14 +28,14 @@ export default function Introduction() {
   return (
     <>
       <Stack spacing={10} justifyContent="flex-start" alignItems="flex-start">
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 0.7 } }}
-        >
+        <FadeInWhenVisible>
           <Box position="relative">
             <Image
-              src="https://svgsilh.com/svg/1320872.svg"
-              filter="invert(0.1)"
+              src={`https://svgsilh.com/svg/27899-${colors.complement.replace(
+                '#',
+                '',
+              )}.svg`}
+              filter="contrast(1)"
               w={{ base: '140px', md: '300px' }}
               position="absolute"
               top={{ base: '0', md: '-30' }}
@@ -46,10 +49,13 @@ export default function Introduction() {
               fontWeight="medium"
               position="relative"
               zIndex={1}
+              whiteSpace="nowrap"
             >
               Hey there, I'm
             </Text>
           </Box>
+        </FadeInWhenVisible>
+        <StaggerChild>
           <Heading
             fontSize="display"
             lineHeight={'95%'}
@@ -60,18 +66,13 @@ export default function Introduction() {
           >
             Srijan
           </Heading>
-        </SlideFade>
-
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 0.8 } }}
-        >
           <Heading
             color="textSecondary"
             fontSize="display2"
             fontWeight="medium"
             whiteSpace="pre-wrap"
             letterSpacing="-1.6px"
+            mt={2}
           >
             <Box color="displayColor" as="span">
               and I'm
@@ -90,15 +91,11 @@ export default function Introduction() {
               })}
             </TextLoop>
           </Heading>
-        </SlideFade>
-
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 0.9 } }}
-        >
-          <Text fontSize="display3" color="textSecondary">
+          <Text fontSize="display3" color="textSecondary" mt={2}>
             🚀 Open to new, exciting opportunities
             <br />
+          </Text>
+          <Text fontSize="display3" color="textSecondary">
             <Stack isInline spacing={1}>
               <Box>🎓</Box>
               <Box>
@@ -106,18 +103,16 @@ export default function Introduction() {
               </Box>
             </Stack>
           </Text>
-        </SlideFade>
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 1.0 } }}
-        >
-          <Stack isInline spacing={4}>
+        </StaggerChild>
+        <Stack isInline spacing={4}>
+          <StaggerChild>
             <Link href="https://github.com/SrivastavaSrijan" isExternal>
               <Button
-                leftIcon={<FaGithub color="#BEE3DB" />}
-                position="static"
+                leftIcon={<FaGithub fill={colors.background} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="white"
+                color="background"
+                mx={1}
+                bgColor="button1"
                 onClick={() => handleClick('introduction_github')}
               >
                 Github
@@ -128,10 +123,11 @@ export default function Introduction() {
               isExternal
             >
               <Button
-                leftIcon={<FaLinkedin color="#BEE3DB" />}
-                position="static"
+                leftIcon={<FaLinkedin fill={colors.background} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="white"
+                color="background"
+                bgColor="button1"
+                mx={1}
                 onClick={() => handleClick('introduction_linkedin')}
               >
                 LinkedIn
@@ -139,18 +135,18 @@ export default function Introduction() {
             </Link>
             <Link href="mailto:srijan.srivastava35@gmail.com" isExternal>
               <Button
-                leftIcon={<FaEnvelope fill="#BEE3DB" />}
-                transition="0.3s"
-                position="static"
+                leftIcon={<FaEnvelope fill={colors.background} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="white"
+                color="background"
+                bgColor="button1"
+                mx={1}
                 onClick={() => handleClick('introduction_email')}
               >
                 Email
               </Button>
             </Link>
-          </Stack>
-        </SlideFade>
+          </StaggerChild>
+        </Stack>
       </Stack>
     </>
   );

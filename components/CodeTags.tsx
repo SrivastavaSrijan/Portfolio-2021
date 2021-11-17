@@ -1,4 +1,4 @@
-import { TagLeftIcon, Tag, TagLabel, Link, As } from '@chakra-ui/react';
+import { TagLeftIcon, Tag, TagLabel, Stack, As, Box } from '@chakra-ui/react';
 import {
   FaReact,
   FaJs,
@@ -39,14 +39,25 @@ export default function CodeTags({ tags }) {
 
   const isLargerThan800 = useMediaQuery(800);
 
-  return (tags ?? [])?.map((item) => (
-    <Tag
-      key={item}
-      colorScheme={getTag(item)[0] as string}
-      size={isLargerThan800 ? 'md' : 'sm'}
+  return (
+    <Stack
+      flexFlow="row wrap"
+      style={{ gap: '12px' }}
+      placeContent="center"
+      placeItems="center"
     >
-      <TagLeftIcon as={getTag(item)[1] as As<IconType>}></TagLeftIcon>
-      <TagLabel>{item}</TagLabel>
-    </Tag>
-  ));
+      {(tags ?? [])?.map((item) => (
+        <Box>
+          <Tag
+            key={item}
+            colorScheme={getTag(item)[0] as string}
+            size={isLargerThan800 ? 'md' : 'sm'}
+          >
+            <TagLeftIcon as={getTag(item)[1] as As<IconType>}></TagLeftIcon>
+            <TagLabel>{item}</TagLabel>
+          </Tag>
+        </Box>
+      ))}
+    </Stack>
+  );
 }

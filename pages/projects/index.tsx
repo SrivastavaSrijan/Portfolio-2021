@@ -13,7 +13,8 @@ import Container from '../../components/Container';
 import Head from 'next/head';
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 import { FaSearch } from 'react-icons/fa';
-
+import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
+import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
 export default function Projects({ projects }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => {
@@ -72,21 +73,22 @@ export default function Projects({ projects }) {
           spacing={10}
           justifyContent="center"
           px={['5vw', '10vw']}
-          my={['15vh', '15vh', '22.5vh', '22.5vh']}
+          my={['5vh', '5vh', '22.5vh', '22.5vh']}
         >
-          <SlideFade
-            in={true}
-            transition={{ enter: { duration: 0.4, delay: 0.7 } }}
-          >
+          <SlideUpWhenVisible>
             <Stack spacing={5}>
               {' '}
               <Heading
-                color="displayColor"
-                fontSize={{ base: '4xl', md: '6xl' }}
+                fontSize="display"
+                lineHeight={'95%'}
+                color="button1"
+                letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+                position="relative"
+                zIndex={1}
               >
                 Projects
               </Heading>
-              <Text fontSize={{ base: '14px', md: '16px' }}>
+              <Text fontSize="display2" color="textPrimary">
                 Archive of applications I've designed and developed.
               </Text>
               <InputGroup maxW="400px">
@@ -103,19 +105,16 @@ export default function Projects({ projects }) {
               </InputGroup>
               <Divider />
             </Stack>
-          </SlideFade>
-          <SlideFade
-            in={true}
-            transition={{ enter: { duration: 0.4, delay: 0.8 } }}
-          >
-            <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={8}>
-              {projects
-                .filter((e) =>
-                  e.fields.title.toLowerCase().includes(query.toLowerCase()),
-                )
-                .map((project) => (
+          </SlideUpWhenVisible>
+
+          <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={8}>
+            {projects
+              .filter((e) =>
+                e.fields.title.toLowerCase().includes(query.toLowerCase()),
+              )
+              .map((project) => (
+                <FadeInWhenVisible key={project.fields.title}>
                   <Cards
-                    key={project.fields.title}
                     imageURL={project.fields.imageUrl}
                     title={project.fields.title}
                     desc={project.fields.description}
@@ -124,9 +123,9 @@ export default function Projects({ projects }) {
                     isFeatured={false}
                     tag={project.fields.tags}
                   />
-                ))}
-            </SimpleGrid>
-          </SlideFade>
+                </FadeInWhenVisible>
+              ))}
+          </SimpleGrid>
         </Stack>
       </Container>
     </>

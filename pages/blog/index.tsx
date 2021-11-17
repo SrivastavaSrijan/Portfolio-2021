@@ -16,7 +16,8 @@ import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 import useMediaQuery from '../../hook/useMediaQuery';
 import readingTime from 'reading-time';
 import dateFormat from 'dateformat';
-
+import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
+import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
 export default function Index({ articles }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => setQuery(e.target.value);
@@ -67,15 +68,19 @@ export default function Index({ articles }) {
         px={['5vw', '10vw']}
         my={['15vh', '15vh', '22.5vh', '22.5vh']}
       >
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 0.7 } }}
-        >
-          <Stack spacing={5}>
-            <Heading color="displayColor" fontSize={{ base: '4xl', md: '6xl' }}>
+        <Stack spacing={5}>
+          <SlideUpWhenVisible>
+            <Heading
+              fontSize="display"
+              lineHeight={'95%'}
+              color="button1"
+              letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+              position="relative"
+              zIndex={1}
+            >
               Blog
             </Heading>
-            <Text fontSize={{ base: '14px', md: '16px' }}>
+            <Text fontSize="display2" color="textPrimary">
               Musings on tech, business and everything in between.
             </Text>
             <InputGroup maxW="400px">
@@ -88,18 +93,15 @@ export default function Index({ articles }) {
               />
             </InputGroup>
             <Divider />
-          </Stack>
-        </SlideFade>
-        <SlideFade
-          in={true}
-          transition={{ enter: { duration: 0.4, delay: 0.8 } }}
-        >
-          <Stack spacing={5}>
-            {articles
-              .filter((e) =>
-                e.fields.title.toLowerCase().includes(query.toLowerCase()),
-              )
-              .map((article) => (
+          </SlideUpWhenVisible>
+        </Stack>
+        <Stack spacing={5}>
+          {articles
+            .filter((e) =>
+              e.fields.title.toLowerCase().includes(query.toLowerCase()),
+            )
+            .map((article) => (
+              <FadeInWhenVisible>
                 <Stack
                   key={article.fields.date}
                   direction={isLargerThan1024 ? 'row' : 'column'}
@@ -149,9 +151,9 @@ export default function Index({ articles }) {
                     </Link>
                   </Flex>
                 </Stack>
-              ))}
-          </Stack>
-        </SlideFade>
+              </FadeInWhenVisible>
+            ))}
+        </Stack>
       </Stack>
     </Container>
   );

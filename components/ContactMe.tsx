@@ -1,8 +1,17 @@
-import { Link, Button, chakra, Heading, Stack, Text } from '@chakra-ui/react';
+import {
+  Link,
+  Button,
+  chakra,
+  Heading,
+  Stack,
+  Text,
+  SlideFade,
+} from '@chakra-ui/react';
 import useMediaQuery from '../hook/useMediaQuery';
 import { FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
+import { colors } from '../styles/theme';
 
 export default function ContactMe() {
   const isLargerThan800 = useMediaQuery(800);
@@ -22,14 +31,14 @@ export default function ContactMe() {
         justifyContent="center"
       >
         <SlideUpWhenVisible>
-          <Heading fontSize={{ base: '4xl', md: '5xl' }} textAlign="center">
+          <Heading fontSize="display" color="button1" textAlign="center">
             Hit me up!
           </Heading>
         </SlideUpWhenVisible>
 
-        <SlideUpWhenVisible>
+        <SlideFade in={true}>
           <Text
-            fontSize="md"
+            fontSize="display2"
             color="textSecondary"
             textAlign="center"
             maxW="32rem"
@@ -40,14 +49,14 @@ export default function ContactMe() {
             <br />
             <chakra.span
               color="button1"
+              fontSize="display3"
               display={{ base: 'block', md: 'inline' }}
             >
               {' '}
               Contact me using the links below.
             </chakra.span>
           </Text>
-        </SlideUpWhenVisible>
-
+        </SlideFade>
         <SlideUpWhenVisible>
           <Stack isInline spacing={4}>
             <Link
@@ -56,10 +65,11 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_linkedin')}
             >
               <Button
-                leftIcon={<FaLinkedin fill="#BEE3DB" />}
+                leftIcon={<FaLinkedin fill={colors.background} />}
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="white"
+                color="background"
+                bgColor="button1"
               >
                 LinkedIn
               </Button>
@@ -70,11 +80,12 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_email')}
             >
               <Button
-                color="white"
-                leftIcon={<FaEnvelope fill="#BEE3DB" />}
+                leftIcon={<FaEnvelope fill={colors.background} />}
                 transition="0.3s"
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
+                color="background"
+                bgColor="button1"
               >
                 Email
               </Button>
@@ -85,10 +96,11 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_resume')}
             >
               <Button
-                leftIcon={<FaFileAlt fill="#BEE3DB" />}
+                leftIcon={<FaFileAlt fill={colors.background} />}
                 position="static"
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="white"
+                color="background"
+                bgColor="button1"
               >
                 Resume
               </Button>

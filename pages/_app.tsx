@@ -1,7 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import customTheme from '../styles/theme';
+import customTheme, { colors } from '../styles/theme';
 import { Global, css } from '@emotion/react';
 import { prismDarkTheme } from '../styles/prism';
+import PageTransition from '../hook/PageTransition';
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -23,7 +24,7 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: #080808;
+            background: ${colors.background};
           }
           ::-webkit-scrollbar {
             width: 8px;
@@ -45,7 +46,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <GlobalStyle>
-        <Component {...pageProps} />
+        <PageTransition>
+          <Component {...pageProps} />
+        </PageTransition>
       </GlobalStyle>
     </ChakraProvider>
   );

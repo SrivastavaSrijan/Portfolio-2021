@@ -11,6 +11,9 @@ import NextLink from 'next/link';
 import Cards from './Card';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
+import ScrollWithReveal from '../hook/ScrollWithReveal';
+import useMediaQuery from '../hook/useMediaQuery';
+import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 
 export default function FeaturedProjects({ projects }) {
   const handleClick = (event) => {
@@ -19,12 +22,15 @@ export default function FeaturedProjects({ projects }) {
       action: event,
     });
   };
+  const isLargerThan800 = useMediaQuery(800);
 
   return (
     <>
       <Stack spacing={8} w="full">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
-          <SlideUpWhenVisible threshold={0.1}>
+          <SlideUpWhenVisible
+            style={isLargerThan800 && { gridColumn: '2', gridRow: '1' }}
+          >
             <Stack spacing={1}>
               <Stack
                 isInline
@@ -32,29 +38,21 @@ export default function FeaturedProjects({ projects }) {
                 justifyContent="space-between"
               >
                 <Heading
-                  fontSize={{ base: 'xl', md: '2xl' }}
-                  color="displayColor"
-                  fontFamily="Ubuntu"
+                  fontSize="display"
+                  lineHeight={'95%'}
+                  color="button1"
+                  letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+                  position="relative"
+                  zIndex={1}
                 >
                   I'm very proud of these...
                 </Heading>
-                <NextLink href="/projects" passHref>
-                  <Link
-                    onClick={() => handleClick('featuredprojects_explore more')}
-                  >
-                    <Text
-                      display={{ base: 'block', md: 'none' }}
-                      fontSize={{ base: 'sm', md: 'xl' }}
-                      color="button1"
-                      _hover={{ color: 'button2' }}
-                    >
-                      {' '}
-                      Explore more &rarr;
-                    </Text>
-                  </Link>
-                </NextLink>
               </Stack>
-              <Text fontSize={{ base: 'md', md: 'xl' }} color="textSecondary">
+              <Text
+                fontSize="display3"
+                color="textSecondary"
+                position="relative"
+              >
                 Late nights and coffee runs have helped me outthink and
                 conceptualize new applications. Here are some of my capstones!
               </Text>
@@ -62,29 +60,27 @@ export default function FeaturedProjects({ projects }) {
                 <Link
                   onClick={() => handleClick('featuredprojects_explore more')}
                 >
-                  <Text
-                    display={{ base: 'none', md: 'block' }}
-                    fontSize={{ base: 'md', md: 'xl' }}
-                  >
-                    Explore more &rarr;
-                  </Text>
+                  <Text fontSize="display2">Explore more &rarr;</Text>
                 </Link>
               </NextLink>
             </Stack>
           </SlideUpWhenVisible>
-          <SlideUpWhenVisible>
-            <Cards
-              imageURL={projects[0].fields.imageUrl}
-              title={projects[0].fields.title}
-              desc={projects[0].fields.description}
-              githubLink={projects[0].fields.githubLink}
-              deployLink={projects[0].fields.deployLink}
-              isFeatured={true}
-              tag={projects[0].fields.tags}
-            />
-          </SlideUpWhenVisible>
-          <SlideUpWhenVisible>
-            <Box mt={{ md: '-50%' }}>
+
+          <FadeInWhenVisible>
+            <Box>
+              <Cards
+                imageURL={projects[0].fields.imageUrl}
+                title={projects[0].fields.title}
+                desc={projects[0].fields.description}
+                githubLink={projects[0].fields.githubLink}
+                deployLink={projects[0].fields.deployLink}
+                isFeatured={true}
+                tag={projects[0].fields.tags}
+              />
+            </Box>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Box>
               <Cards
                 imageURL={projects[1].fields.imageUrl}
                 title={projects[1].fields.title}
@@ -95,18 +91,20 @@ export default function FeaturedProjects({ projects }) {
                 tag={projects[1].fields.tags}
               />
             </Box>
-          </SlideUpWhenVisible>
-          <SlideUpWhenVisible threshold={0.8}>
-            <Cards
-              imageURL={projects[2].fields.imageUrl}
-              title={projects[2].fields.title}
-              desc={projects[2].fields.description}
-              githubLink={projects[2].fields.githubLink}
-              deployLink={projects[2].fields.deployLink}
-              isFeatured={true}
-              tag={projects[2].fields.tags}
-            />
-          </SlideUpWhenVisible>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Box>
+              <Cards
+                imageURL={projects[2].fields.imageUrl}
+                title={projects[2].fields.title}
+                desc={projects[2].fields.description}
+                githubLink={projects[2].fields.githubLink}
+                deployLink={projects[2].fields.deployLink}
+                isFeatured={true}
+                tag={projects[2].fields.tags}
+              />
+            </Box>
+          </FadeInWhenVisible>
         </SimpleGrid>
       </Stack>
     </>

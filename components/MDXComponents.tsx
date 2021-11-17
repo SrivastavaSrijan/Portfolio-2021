@@ -114,10 +114,16 @@ const MDXComponents = {
   br: (props) => <Box height="24px" {...props} />,
   hr: Hr,
   a: CustomLink,
-  p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
-  ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
-  ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
-  li: (props) => <Box as="li" pb={1} {...props} />,
+  p: (props) => (
+    <Text as="p" mt={0} color="textPrimary" lineHeight="tall" {...props} />
+  ),
+  ul: (props) => (
+    <Box as="ul" pt={2} pl={4} ml={2} {...props} color="textPrimary" />
+  ),
+  ol: (props) => (
+    <Box as="ol" pt={2} pl={4} ml={2} {...props} color="textPrimary" />
+  ),
+  li: (props) => <Box as="li" pb={1} {...props} color="textPrimary" />,
 };
 
 export { CustomLink };

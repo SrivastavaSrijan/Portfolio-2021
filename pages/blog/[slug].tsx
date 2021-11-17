@@ -70,8 +70,12 @@ export default function Post({ metadata, source, views }) {
             p={['20px', '20px', '24px', '24px']}
           >
             <Heading
-              fontSize={['3xl', '3xl', '5xl', '5xl']}
-              color="displayColor"
+              fontSize="display"
+              lineHeight={'95%'}
+              color="button1"
+              letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+              position="relative"
+              zIndex={1}
             >
               {metadata.title}
             </Heading>
