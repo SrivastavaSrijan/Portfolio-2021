@@ -5,10 +5,19 @@ import {
   Heading,
   Box,
   Button,
-  SlideFade,
+  IconButton,
   Image,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaGg,
+  FaGithub,
+  FaHandSparkles,
+  FaJava,
+  FaLinkedin,
+  FaRocket,
+} from 'react-icons/fa';
 import useMediaQuery from '../hook/useMediaQuery';
 import ReactGA from 'react-ga';
 import TextLoop from 'react-text-loop';
@@ -16,6 +25,7 @@ import { getHeroText } from '../globalData';
 import { colors } from '../styles/theme';
 import StaggerChild from '../hook/IntroductionTransitions';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
+import { RoundedTextIcon } from '../components/Icon';
 
 export default function Introduction() {
   const isLargerThan800 = useMediaQuery(800);
@@ -27,27 +37,13 @@ export default function Introduction() {
   };
   return (
     <>
-      <Stack spacing={10} justifyContent="flex-start" alignItems="flex-start">
+      <Stack justifyContent="flex-start" alignItems="flex-start" minH="50vh">
         <FadeInWhenVisible>
-          <Box position="relative">
-            <Image
-              src={`https://svgsilh.com/svg/27899-${colors.complement.replace(
-                '#',
-                '',
-              )}.svg`}
-              filter="contrast(1)"
-              w={{ base: '140px', md: '300px' }}
-              position="absolute"
-              top={{ base: '0', md: '-30' }}
-              left={{ base: '-10', md: '-20' }}
-              zIndex={0}
-              alt=""
-            ></Image>
+          <Box>
             <Text
-              color="displayColor"
+              color="textPrimary"
               fontSize="display2"
               fontWeight="medium"
-              position="relative"
               zIndex={1}
               whiteSpace="nowrap"
             >
@@ -57,7 +53,7 @@ export default function Introduction() {
         </FadeInWhenVisible>
         <StaggerChild>
           <Heading
-            fontSize="display"
+            fontSize="hero"
             lineHeight={'95%'}
             color="button1"
             letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
@@ -72,7 +68,7 @@ export default function Introduction() {
             fontWeight="medium"
             whiteSpace="pre-wrap"
             letterSpacing="-1.6px"
-            mt={2}
+            mt={5}
           >
             <Box color="displayColor" as="span">
               and I'm
@@ -91,59 +87,60 @@ export default function Introduction() {
               })}
             </TextLoop>
           </Heading>
-          <Text fontSize="display3" color="textSecondary" mt={2}>
-            🚀 Open to new, exciting opportunities
-            <br />
-          </Text>
-          <Text fontSize="display3" color="textSecondary">
-            <Stack isInline spacing={1}>
-              <Box>🎓</Box>
-              <Box>
-                Frontend Developer proficient with Angular, JavaScript and React
-              </Box>
-            </Stack>
-          </Text>
+          <RoundedTextIcon
+            icon={<FaRocket fill={colors.textSecondary} />}
+            iconBg={'button1'}
+            text={'Open to new, exciting opportunities'}
+            mt={5}
+          />
+          <RoundedTextIcon
+            icon={<FaHandSparkles fill={colors.textSecondary} />}
+            iconBg={'button1'}
+            mt={2}
+            text={
+              'Frontend Developer proficient with Angular, JavaScript and React'
+            }
+          />
         </StaggerChild>
-        <Stack isInline spacing={4}>
+        <Stack>
           <StaggerChild>
             <Link href="https://github.com/SrivastavaSrijan" isExternal>
-              <Button
-                leftIcon={<FaGithub fill={colors.background} />}
+              <IconButton
+                leftIcon={<FaGithub fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
+                aria-label="Github"
+                color="textSecondary"
+                bgColor="background"
+                mt={2}
                 mx={1}
-                bgColor="button1"
                 onClick={() => handleClick('introduction_github')}
-              >
-                Github
-              </Button>
+              ></IconButton>
             </Link>
             <Link
               href="https://www.linkedin.com/in/srijansrivastava35/"
               isExternal
             >
-              <Button
-                leftIcon={<FaLinkedin fill={colors.background} />}
+              <IconButton
+                leftIcon={<FaLinkedin fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
-                bgColor="button1"
+                color="textSecondary"
+                mt={2}
                 mx={1}
+                aria-label="Github"
                 onClick={() => handleClick('introduction_linkedin')}
-              >
-                LinkedIn
-              </Button>
+              ></IconButton>
             </Link>
             <Link href="mailto:srijan.srivastava35@gmail.com" isExternal>
-              <Button
-                leftIcon={<FaEnvelope fill={colors.background} />}
+              <IconButton
+                leftIcon={<FaEnvelope fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
-                bgColor="button1"
+                color="textSecondary"
+                bgColor="background"
+                mt={2}
                 mx={1}
+                aria-label="Github"
                 onClick={() => handleClick('introduction_email')}
-              >
-                Email
-              </Button>
+              ></IconButton>
             </Link>
           </StaggerChild>
         </Stack>

@@ -31,7 +31,15 @@ export default function ContactMe() {
         justifyContent="center"
       >
         <SlideUpWhenVisible>
-          <Heading fontSize="display" color="button1" textAlign="center">
+          <Heading
+            fontSize="display"
+            lineHeight={'95%'}
+            color="button1"
+            textAlign="center"
+            letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+            position="relative"
+            zIndex={1}
+          >
             Hit me up!
           </Heading>
         </SlideUpWhenVisible>
@@ -65,11 +73,9 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_linkedin')}
             >
               <Button
-                leftIcon={<FaLinkedin fill={colors.background} />}
-                position="static"
+                leftIcon={<FaLinkedin fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
-                bgColor="button1"
+                color="textSecondary"
               >
                 LinkedIn
               </Button>
@@ -80,12 +86,9 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_email')}
             >
               <Button
-                leftIcon={<FaEnvelope fill={colors.background} />}
-                transition="0.3s"
-                position="static"
+                leftIcon={<FaEnvelope fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
-                bgColor="button1"
+                color="textSecondary"
               >
                 Email
               </Button>
@@ -96,11 +99,9 @@ export default function ContactMe() {
               onClick={() => handleClick('contact_resume')}
             >
               <Button
-                leftIcon={<FaFileAlt fill={colors.background} />}
-                position="static"
+                leftIcon={<FaFileAlt fill={colors.textSecondary} />}
                 size={isLargerThan800 ? 'md' : 'sm'}
-                color="background"
-                bgColor="button1"
+                color="textSecondary"
               >
                 Resume
               </Button>

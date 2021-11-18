@@ -58,16 +58,16 @@ export default function LatestArticle({ articles }) {
               <Stack
                 direction="column"
                 alignItems="flex-start"
-                bg="secondary"
-                transition="0.3s"
-                borderRadius="10px"
-                p={5}
                 justifyContent="flex-start"
                 space={2}
+                bg="secondary"
+                borderWidth="0px"
+                px={{ sm: 2, md: 10 }}
+                py={10}
+                rounded="lg"
               >
                 <Text
-                  bgColor="button1"
-                  color="background"
+                  color="textPrimary"
                   fontSize={{ base: 'md', md: 'xl' }}
                   fontWeight="bold"
                   cursor="pointer"

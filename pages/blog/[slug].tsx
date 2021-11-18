@@ -11,7 +11,7 @@ import readingTime from 'reading-time';
 
 import Image from '../../components/ChakraNextImage';
 import Container from '../../components/Container';
-import PostContainer from '../../components/PostContainer';
+import PostContainer from '../../containers/PostContainer';
 import MDXComponents from '../../components/MDXComponents';
 
 export default function Post({ metadata, source, views }) {
@@ -70,7 +70,7 @@ export default function Post({ metadata, source, views }) {
             p={['20px', '20px', '24px', '24px']}
           >
             <Heading
-              fontSize="display"
+              fontSize="display2"
               lineHeight={'95%'}
               color="button1"
               letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { chakra, Flex, Stack, Text } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import ReactGA from 'react-ga';
+import { colors } from '../styles/theme';
 
 const Container = ({ enableTransition, children }) => {
   useEffect(() => {
@@ -17,14 +18,14 @@ const Container = ({ enableTransition, children }) => {
       </Flex>
       <Stack alignItems="center" mt={20} mb={5}>
         <Text textAlign="center" fontSize="xs">
-          <chakra.span fontWeight="semibold" color="button1">
+          <chakra.span fontWeight="semibold" color="textPrimary">
             Made with
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               viewBox="0 0 24 24"
-              fill="none"
+              fill={colors.button1}
               style={{ display: 'inline-block', margin: '0 5px' }}
               stroke="currentColor"
               strokeWidth="2"

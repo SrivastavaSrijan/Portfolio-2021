@@ -215,7 +215,7 @@ export default function AboutMe() {
                   '#',
                   '',
                 )}.svg`}
-                zIndex={1}
+                zIndex={0}
                 position="absolute"
                 top={0}
                 right={0}

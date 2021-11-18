@@ -6,6 +6,8 @@ import {
   Link,
   UnorderedList,
   ListItem,
+  Box,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import ReactGA from 'react-ga';
@@ -15,11 +17,13 @@ import Image from './ChakraNextImage';
 import CodeTags from './CodeTags';
 import { colors } from '../styles/theme';
 import StaggerChild from '../hook/IntroductionTransitions';
+import React from 'react';
 
 export default function Cards({
   imageURL,
   title,
-  desc,
+  subtitle,
+  desc = null,
   githubLink,
   deployLink,
   isFeatured,
@@ -33,7 +37,13 @@ export default function Cards({
   };
   let mdxSource = null;
   return (
-    <Stack bg="secondary" minH="320px" borderRadius="4">
+    <Box
+      bg="secondary"
+      borderWidth="0px"
+      px={{ sm: 2, md: 10 }}
+      py={10}
+      rounded="lg"
+    >
       <Link href={deployLink} isExternal>
         <Image
           width={1250}
@@ -43,7 +53,6 @@ export default function Cards({
           src={imageURL}
           alt="project image"
         ></Image>
-
         <Stack px={4} py={2}>
           <Stack isInline justifyContent="space-between" alignItems="center">
             <Stack
@@ -55,9 +64,8 @@ export default function Cards({
               <Text
                 fontFamily="Ubuntu"
                 fontSize="display2"
-                color="background"
-                bgColor="button1"
-                p="0 16px"
+                color="textPrimary"
+                p="0 4px 0 16px"
                 minHeight="56px"
               >
                 {title}
@@ -65,7 +73,7 @@ export default function Cards({
               {githubLink && (
                 <Link
                   href={githubLink}
-                  fill={colors.button1}
+                  fill={colors.textPrimary}
                   onClick={() =>
                     handleClick(`githublink_${title.replace('@', '-at-')}`)
                   }
@@ -74,14 +82,14 @@ export default function Cards({
                   <FaGithub
                     aria-label="github"
                     size={23}
-                    fill={colors.button1}
+                    fill={colors.textPrimary}
                   />
                 </Link>
               )}
               {deployLink && (
                 <Link
                   href={deployLink}
-                  fill={colors.button1}
+                  fill={colors.textPrimary}
                   onClick={() =>
                     handleClick(`deploylink_${title.replace('@', '-at')}`)
                   }
@@ -93,19 +101,25 @@ export default function Cards({
             </Stack>
           </Stack>
 
-          <Stack isInline>
+          <Stack>
             <CodeTags tags={tag}></CodeTags>
           </Stack>
-          <Divider color="textSecondary" />
-          <Text color="textSecondary" fontSize="display3">
-            <UnorderedList>
-              {desc.split('\n').map((text: string, index: number) => (
-                <ListItem key={index}>{text}</ListItem>
-              ))}
-            </UnorderedList>
-          </Text>
+          {desc ? (
+            <>
+              <Divider color="textSecondary" />
+              <Text color="textSecondary" fontSize="display3">
+                <UnorderedList>
+                  {desc.split('\n').map((text: string, index: number) => (
+                    <ListItem fontSize={['xs', 'xs', 'sm', 'sm']} key={index}>
+                      {text}
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Text>
+            </>
+          ) : null}
         </Stack>
       </Link>
-    </Stack>
+    </Box>
   );
 }

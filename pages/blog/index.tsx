@@ -66,7 +66,7 @@ export default function Index({ articles }) {
         spacing={10}
         justifyContent="center"
         px={['5vw', '10vw']}
-        my={['15vh', '15vh', '22.5vh', '22.5vh']}
+        my={['5vh', '5vh', '12.5vh', '12.5vh']}
       >
         <Stack spacing={5}>
           <SlideUpWhenVisible>
@@ -173,7 +173,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: data.items.reverse(),
+      articles: data.items,
     },
   };
 }

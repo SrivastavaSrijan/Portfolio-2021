@@ -8,7 +8,7 @@ import {
   Box,
 } from '@chakra-ui/layout';
 import NextLink from 'next/link';
-import Cards from './Card';
+import Cards from '../components/Card';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
 import ScrollWithReveal from '../hook/ScrollWithReveal';
@@ -71,7 +71,7 @@ export default function FeaturedProjects({ projects }) {
               <Cards
                 imageURL={projects[0].fields.imageUrl}
                 title={projects[0].fields.title}
-                desc={projects[0].fields.description}
+                subtitle={projects[0].fields.subtitle}
                 githubLink={projects[0].fields.githubLink}
                 deployLink={projects[0].fields.deployLink}
                 isFeatured={true}
@@ -84,7 +84,7 @@ export default function FeaturedProjects({ projects }) {
               <Cards
                 imageURL={projects[1].fields.imageUrl}
                 title={projects[1].fields.title}
-                desc={projects[1].fields.description}
+                subtitle={projects[1].fields.subtitle}
                 githubLink={projects[1].fields.githubLink}
                 deployLink={projects[1].fields.deployLink}
                 isFeatured={true}
@@ -97,7 +97,7 @@ export default function FeaturedProjects({ projects }) {
               <Cards
                 imageURL={projects[2].fields.imageUrl}
                 title={projects[2].fields.title}
-                desc={projects[2].fields.description}
+                subtitle={projects[2].fields.subtitle}
                 githubLink={projects[2].fields.githubLink}
                 deployLink={projects[2].fields.deployLink}
                 isFeatured={true}

@@ -48,17 +48,32 @@ export default function Navbar({ enableTransition }) {
           <DrawerBody>
             <Stack spacing="56px" mt="56px">
               <NextLink href="/" passHref>
-                <Button as="a" variant="ghost" fontSize="display2">
+                <Button
+                  as="a"
+                  variant="ghost"
+                  color="background"
+                  fontSize="display2"
+                >
                   Home
                 </Button>
               </NextLink>
               <NextLink href="/projects" passHref>
-                <Button as="a" variant="ghost" fontSize="display2">
+                <Button
+                  as="a"
+                  variant="ghost"
+                  color="background"
+                  fontSize="display2"
+                >
                   Projects
                 </Button>
               </NextLink>
               <NextLink href="/blog" passHref>
-                <Button as="a" variant="ghost" fontSize="display2">
+                <Button
+                  as="a"
+                  variant="ghost"
+                  color="background"
+                  fontSize="display2"
+                >
                   Blog
                 </Button>
               </NextLink>
@@ -80,12 +95,12 @@ export default function Navbar({ enableTransition }) {
         width="100%"
         px="24px"
         py="3"
-        background="button1"
+        background="background"
       >
         <NextLink href="/" passHref>
           <Image src="" w={{ base: '32px', md: '48px' }}></Image>
         </NextLink>
-        <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} />
+        <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} color="button1" />
       </Flex>
       <NavbarDrawer />
     </Box>

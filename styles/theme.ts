@@ -23,14 +23,14 @@ const fluidType = (minFont, maxFont) => {
 
 export const colors = {
   background: '#FFFFFD',
-  secondary: '#fffffe',
-  complement: '#ffa69e',
+  secondary: '#FAFAFA',
+  complement: '#E6B422',
   displayColor: '#232323',
   textPrimary: '#3a3a3a',
   textSecondary: '#3a3a3a',
-  button1: '#c14953',
-  button2: '#ffa69e',
-  button3: '#ff686b',
+  button1: '#EECD6B',
+  button2: '#FFFF9B',
+  button3: '#E6B422',
   borderColor: 'transparent',
 };
 
@@ -50,7 +50,7 @@ const breakpoints = createBreakpoints({
 
 const Link = {
   baseStyle: {
-    color: `${colors.button1}`,
+    color: `${colors.textPrimary}`,
     _hover: { color: '#F6A20E', textDecoration: 'none' },
   },
 };
@@ -70,7 +70,8 @@ const overrides = {
     bold: 700,
   },
   fontSizes: {
-    display: fluidType(96, 144),
+    hero: fluidType(108, 180),
+    display: fluidType(72, 144),
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
     display4: fluidType(8, 12),

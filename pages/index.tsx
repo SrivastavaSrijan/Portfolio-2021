@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Stack } from '@chakra-ui/react';
 import Container from '../components/Container';
-import Introduction from '../components/Introduction';
-import FeaturedProjects from '../components/FeaturedProjects';
-import LatestArticle from '../components/LatestArticle';
-import AboutMe from '../components/AboutMe';
-import ContactMe from '../components/ContactMe';
+import Introduction from '../containers/Introduction';
+import FeaturedProjects from '../containers/FeaturedProjects';
+import LatestArticle from '../containers/LatestArticle';
+import AboutMe from '../containers/AboutMe';
+import ContactMe from '../containers/ContactMe';
 
 export default function Index({ projects, articles }) {
   return (
@@ -138,7 +138,7 @@ export default function Index({ projects, articles }) {
           justifyContent="center"
           alignItems="flex-start"
           px={{ base: '5vw', md: '10vw' }}
-          mt={{ base: '15vh', md: '22.5vh' }}
+          mt={{ base: '5vh', md: '12.5vh' }}
         >
           <Introduction />
           <AboutMe />

@@ -73,10 +73,10 @@ export default function Projects({ projects }) {
           spacing={10}
           justifyContent="center"
           px={['5vw', '10vw']}
-          my={['5vh', '5vh', '22.5vh', '22.5vh']}
+          my={['5vh', '5vh', '12.5vh', '12.5vh']}
         >
-          <SlideUpWhenVisible>
-            <Stack spacing={5}>
+          <Stack spacing={5}>
+            <SlideUpWhenVisible>
               {' '}
               <Heading
                 fontSize="display"
@@ -104,8 +104,8 @@ export default function Projects({ projects }) {
                 />
               </InputGroup>
               <Divider />
-            </Stack>
-          </SlideUpWhenVisible>
+            </SlideUpWhenVisible>
+          </Stack>
 
           <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={8}>
             {projects
@@ -117,6 +117,7 @@ export default function Projects({ projects }) {
                   <Cards
                     imageURL={project.fields.imageUrl}
                     title={project.fields.title}
+                    subtitle={project.fields.subtitle}
                     desc={project.fields.description}
                     githubLink={project.fields.githubLink}
                     deployLink={project.fields.deployLink}
