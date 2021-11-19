@@ -1,6 +1,7 @@
+import { Flex } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 
-export default function StaggerChild({ children, ...rest }) {
+export default function StaggerChild({ children, direction, ...rest }) {
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -25,7 +26,8 @@ export default function StaggerChild({ children, ...rest }) {
     <motion.div
       variants={container}
       initial="hidden"
-      animate="visible"
+      viewport={{ once: true }}
+      whileInView="visible"
       transition={{
         duration: 0.5,
         type: 'spring',
@@ -33,11 +35,13 @@ export default function StaggerChild({ children, ...rest }) {
         stiffness: 200,
       }}
     >
-      {children.map((childrenElement, rowInx) => (
-        <motion.span key={rowInx} variants={item}>
-          {childrenElement}
-        </motion.span>
-      ))}
+      <Flex flexFlow={direction} {...rest}>
+        {children.map((childrenElement, rowInx) => (
+          <motion.span key={rowInx} variants={item}>
+            {childrenElement}
+          </motion.span>
+        ))}
+      </Flex>
     </motion.div>
   );
 }

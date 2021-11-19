@@ -51,6 +51,13 @@ export default function Navbar({ enableTransition }) {
                 <Button
                   as="a"
                   variant="ghost"
+                  bgColor="color1"
+                  _hover={{
+                    background: 'black.500',
+                  }}
+                  _active={{
+                    background: 'black.500',
+                  }}
                   color="background"
                   fontSize="display2"
                 >
@@ -60,6 +67,13 @@ export default function Navbar({ enableTransition }) {
               <NextLink href="/projects" passHref>
                 <Button
                   as="a"
+                  bgColor="color1"
+                  _hover={{
+                    background: 'black.500',
+                  }}
+                  _active={{
+                    background: 'black.500',
+                  }}
                   variant="ghost"
                   color="background"
                   fontSize="display2"
@@ -70,7 +84,14 @@ export default function Navbar({ enableTransition }) {
               <NextLink href="/blog" passHref>
                 <Button
                   as="a"
+                  bgColor="color1"
                   variant="ghost"
+                  _hover={{
+                    background: 'black.500',
+                  }}
+                  _active={{
+                    background: 'black.500',
+                  }}
                   color="background"
                   fontSize="display2"
                 >

@@ -23,9 +23,10 @@ import ReactGA from 'react-ga';
 import TextLoop from 'react-text-loop';
 import { getHeroText } from '../globalData';
 import { colors } from '../styles/theme';
-import StaggerChild from '../hook/IntroductionTransitions';
+import StaggerChild from '../hook/StaggerChild';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
-import { RoundedTextIcon } from '../components/Icon';
+import { RoundedTextIcon } from '../components/RoundedTextIcon';
+import { ContactMeButtons } from '../components/ContactMeButtons';
 
 export default function Introduction() {
   const isLargerThan800 = useMediaQuery(800);
@@ -51,7 +52,7 @@ export default function Introduction() {
             </Text>
           </Box>
         </FadeInWhenVisible>
-        <StaggerChild>
+        <StaggerChild direction="column nowrap">
           <Heading
             fontSize="hero"
             lineHeight={'95%'}
@@ -102,48 +103,7 @@ export default function Introduction() {
             }
           />
         </StaggerChild>
-        <Stack>
-          <StaggerChild>
-            <Link href="https://github.com/SrivastavaSrijan" isExternal>
-              <IconButton
-                leftIcon={<FaGithub fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                aria-label="Github"
-                color="textSecondary"
-                bgColor="background"
-                mt={2}
-                mx={1}
-                onClick={() => handleClick('introduction_github')}
-              ></IconButton>
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/srijansrivastava35/"
-              isExternal
-            >
-              <IconButton
-                leftIcon={<FaLinkedin fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                color="textSecondary"
-                mt={2}
-                mx={1}
-                aria-label="Github"
-                onClick={() => handleClick('introduction_linkedin')}
-              ></IconButton>
-            </Link>
-            <Link href="mailto:srijan.srivastava35@gmail.com" isExternal>
-              <IconButton
-                leftIcon={<FaEnvelope fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                color="textSecondary"
-                bgColor="background"
-                mt={2}
-                mx={1}
-                aria-label="Github"
-                onClick={() => handleClick('introduction_email')}
-              ></IconButton>
-            </Link>
-          </StaggerChild>
-        </Stack>
+        <ContactMeButtons />
       </Stack>
     </>
   );

@@ -48,7 +48,7 @@ export default function LatestArticle({ articles }) {
       </SlideUpWhenVisible>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={{ base: 2, md: 4 }}>
         {articles.map((article, index) => (
-          <SlideUpWhenVisible>
+          <SlideUpWhenVisible key={index}>
             <Link
               href={'/blog/' + article.fields.slug}
               _hover={{ textDecoration: 'none' }}
@@ -62,7 +62,7 @@ export default function LatestArticle({ articles }) {
                 space={2}
                 bg="secondary"
                 borderWidth="0px"
-                px={{ sm: 2, md: 10 }}
+                px={5}
                 py={10}
                 rounded="lg"
               >

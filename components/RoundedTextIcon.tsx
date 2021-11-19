@@ -9,11 +9,12 @@ export const RoundedTextIcon = ({ text = '', icon, iconBg, ...rest }) => {
         align={'center'}
         justify={'center'}
         rounded={'full'}
+        flex="0 0 auto"
         bg={iconBg}
       >
         {icon}
       </Flex>
-      <Text fontWeight={600} color="textPrimary">
+      <Text fontWeight={100} color="textPrimary">
         {text}
       </Text>
     </Stack>

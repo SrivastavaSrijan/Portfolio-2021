@@ -1,4 +1,12 @@
-import { TagLeftIcon, Tag, TagLabel, Stack, As, Box } from '@chakra-ui/react';
+import {
+  TagLeftIcon,
+  Tag,
+  TagLabel,
+  Stack,
+  As,
+  Box,
+  Flex,
+} from '@chakra-ui/react';
 import {
   FaReact,
   FaJs,
@@ -29,6 +37,7 @@ import {
   SiReduxsaga,
   SiRxdb,
 } from 'react-icons/si';
+import StaggerChild from '../hook/StaggerChild';
 
 import useMediaQuery from '../hook/useMediaQuery';
 export default function CodeTags({ tags }) {
@@ -92,23 +101,25 @@ export default function CodeTags({ tags }) {
   const isLargerThan800 = useMediaQuery(800);
 
   return (
-    <Stack
-      flexFlow="row wrap"
-      style={{ gap: '12px' }}
-      placeContent="center"
-      placeItems="center"
-    >
-      {(tags ?? [])?.map((item) => (
-        <Box key={item}>
-          <Tag
-            colorScheme={getTag(item)[0] as string}
-            size={isLargerThan800 ? 'md' : 'sm'}
-          >
-            <TagLeftIcon as={getTag(item)[1] as As<IconType>}></TagLeftIcon>
-            <TagLabel>{item}</TagLabel>
-          </Tag>
-        </Box>
-      ))}
-    </Stack>
+    <Flex>
+      <StaggerChild
+        direction="row wrap"
+        placeContent="center"
+        placeItems="center"
+        style={{ gap: '8px' }}
+      >
+        {(tags ?? [])?.map((item) => (
+          <Box key={item}>
+            <Tag
+              colorScheme={getTag(item)[0] as string}
+              size={isLargerThan800 ? 'md' : 'sm'}
+            >
+              <TagLeftIcon as={getTag(item)[1] as As<IconType>}></TagLeftIcon>
+              <TagLabel>{item}</TagLabel>
+            </Tag>
+          </Box>
+        ))}
+      </StaggerChild>
+    </Flex>
   );
 }

@@ -12,6 +12,7 @@ import { FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
 import { colors } from '../styles/theme';
+import { ContactMeButtons } from '../components/ContactMeButtons';
 
 export default function ContactMe() {
   const isLargerThan800 = useMediaQuery(800);
@@ -66,47 +67,7 @@ export default function ContactMe() {
           </Text>
         </SlideFade>
         <SlideUpWhenVisible>
-          <Stack isInline spacing={4}>
-            <Link
-              href="https://www.linkedin.com/in/srijansrivastava35/"
-              isExternal
-              onClick={() => handleClick('contact_linkedin')}
-            >
-              <Button
-                leftIcon={<FaLinkedin fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                color="textSecondary"
-              >
-                LinkedIn
-              </Button>
-            </Link>
-            <Link
-              href="mailto:srijan.srivastava35@gmail.com"
-              isExternal
-              onClick={() => handleClick('contact_email')}
-            >
-              <Button
-                leftIcon={<FaEnvelope fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                color="textSecondary"
-              >
-                Email
-              </Button>
-            </Link>
-            <Link
-              href="https://drive.google.com/file/d/1q6X_YaarffzIsqgrJY1mxCQKHr4j2nvJ/view?usp=sharing"
-              isExternal
-              onClick={() => handleClick('contact_resume')}
-            >
-              <Button
-                leftIcon={<FaFileAlt fill={colors.textSecondary} />}
-                size={isLargerThan800 ? 'md' : 'sm'}
-                color="textSecondary"
-              >
-                Resume
-              </Button>
-            </Link>
-          </Stack>
+          <ContactMeButtons />
         </SlideUpWhenVisible>
       </Stack>
     </>

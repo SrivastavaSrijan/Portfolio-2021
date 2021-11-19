@@ -16,7 +16,7 @@ import Image from './ChakraNextImage';
 
 import CodeTags from './CodeTags';
 import { colors } from '../styles/theme';
-import StaggerChild from '../hook/IntroductionTransitions';
+import StaggerChild from '../hook/StaggerChild';
 import React from 'react';
 
 export default function Cards({
