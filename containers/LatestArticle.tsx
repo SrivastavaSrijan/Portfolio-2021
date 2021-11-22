@@ -2,6 +2,7 @@ import { Heading } from '@chakra-ui/layout';
 import { Box, Flex, Link, Stack, Text, SimpleGrid } from '@chakra-ui/react';
 import dateFormat from 'dateformat';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
+import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 import NextLink from 'next/link';
 
 export default function LatestArticle({ articles }) {
@@ -11,13 +12,9 @@ export default function LatestArticle({ articles }) {
       display={articles.length < 2 ? 'none' : 'block'}
       w="full"
     >
-      <SlideUpWhenVisible>
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          color="button1"
-        >
-          <Stack spacing={1}>
+      <Flex alignItems="center" justifyContent="space-between" color="button1">
+        <Stack spacing={1}>
+          <SlideUpWhenVisible>
             <Heading
               fontSize="display"
               lineHeight={'95%'}
@@ -28,27 +25,24 @@ export default function LatestArticle({ articles }) {
             >
               Check out my musings
             </Heading>
-            <Stack spacing={1}>
-              <Text
-                fontSize="display3"
-                color="textSecondary"
-                position="relative"
-              >
-                I've had some sort of a journal for as long as I can remember!
-                Some of my articles make the cut and I post them here.
-              </Text>
-            </Stack>
+          </SlideUpWhenVisible>
+
+          <FadeInWhenVisible>
+            <Text fontSize="display3" color="textSecondary" position="relative">
+              I've had some sort of a journal for as long as I can remember!
+              Some of my articles make the cut and I post them here.
+            </Text>
             <NextLink href="/projects">
               <Link>
                 <Text fontSize="display2">View all articles &rarr;</Text>
               </Link>
             </NextLink>
-          </Stack>
-        </Flex>
-      </SlideUpWhenVisible>
+          </FadeInWhenVisible>
+        </Stack>
+      </Flex>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={{ base: 2, md: 4 }}>
         {articles.map((article, index) => (
-          <SlideUpWhenVisible key={index}>
+          <FadeInWhenVisible key={index}>
             <Link
               href={'/blog/' + article.fields.slug}
               _hover={{ textDecoration: 'none' }}
@@ -83,7 +77,7 @@ export default function LatestArticle({ articles }) {
                 </Text>
               </Stack>
             </Link>
-          </SlideUpWhenVisible>
+          </FadeInWhenVisible>
         ))}
       </SimpleGrid>
     </Stack>

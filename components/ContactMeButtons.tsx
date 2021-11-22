@@ -6,7 +6,7 @@ import useMediaQuery from '../hook/useMediaQuery';
 import { FaEnvelope, FaFileAlt, FaLinkedin } from 'react-icons/fa';
 import StaggerChild from '../hook/StaggerChild';
 
-export const ContactMeButtons = ({ ...rest }) => {
+export const ContactMeButtons = ({ delay = 0, ...rest }) => {
   const isLargerThan800 = useMediaQuery(800);
   const handleClick = (event) => {
     ReactGA.event({
@@ -20,6 +20,7 @@ export const ContactMeButtons = ({ ...rest }) => {
         direction="row wrap"
         placeContent="center"
         placeItems="center"
+        delay={delay}
         style={{ gap: '8px' }}
       >
         <Link
@@ -30,6 +31,7 @@ export const ContactMeButtons = ({ ...rest }) => {
           <Button
             leftIcon={<FaLinkedin fill={colors.textSecondary} />}
             size={isLargerThan800 ? 'md' : 'sm'}
+            bgColor="background"
             color="textSecondary"
           >
             LinkedIn
@@ -43,6 +45,7 @@ export const ContactMeButtons = ({ ...rest }) => {
           <Button
             leftIcon={<FaEnvelope fill={colors.textSecondary} />}
             size={isLargerThan800 ? 'md' : 'sm'}
+            bgColor="background"
             color="textSecondary"
           >
             Email
@@ -56,6 +59,7 @@ export const ContactMeButtons = ({ ...rest }) => {
           <Button
             leftIcon={<FaFileAlt fill={colors.textSecondary} />}
             size={isLargerThan800 ? 'md' : 'sm'}
+            bgColor="background"
             color="textSecondary"
           >
             Resume

@@ -5,7 +5,6 @@ import {
   Heading,
   Image,
   Flex,
-  Box,
   chakra,
   Popover,
   Square,
@@ -15,7 +14,6 @@ import {
   PopoverBody,
   PopoverArrow,
   CircularProgress,
-  CircularProgressLabel,
 } from '@chakra-ui/react';
 
 import useMediaQuery from '../hook/useMediaQuery';
@@ -23,9 +21,8 @@ import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
 
 import { useState } from 'react';
-import { colors } from '../styles/theme';
-import ScrollWithReveal from '../hook/ScrollWithReveal';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
+import ImageWithSvg from '../components/ImageWithSvg';
 
 export default function AboutMe() {
   const isLargerThan800 = useMediaQuery(800);
@@ -119,7 +116,10 @@ export default function AboutMe() {
   return (
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-        <Stack spacing={4}>
+        <Stack
+          spacing={4}
+          style={isLargerThan800 ? { gridColumn: 2, gridRow: 1 } : {}}
+        >
           <SlideUpWhenVisible>
             <Heading
               fontSize="display"
@@ -201,38 +201,13 @@ export default function AboutMe() {
             </Text>
           </FadeInWhenVisible>
         </Stack>
-        <Flex alignItems="center" justifyContent="center" position="relative">
-          <Box
-            maxW={{ base: '300px', lg: '350px' }}
-            maxH={{ base: '300px', lg: '350px' }}
-          >
-            <ScrollWithReveal
-              inputRange={isLargerThan800 ? [0.1, 0.5] : [0, 2]}
-              outputRange={isLargerThan800 ? [1, 1.5] : [0.5, 2]}
-            >
-              <Image
-                src={`https://svgsilh.com/svg/26432-${colors.complement.replace(
-                  '#',
-                  '',
-                )}.svg`}
-                zIndex={0}
-                position="absolute"
-                top={0}
-                right={0}
-                w={{ base: '100px', lg: '150px' }}
-                alt=""
-              />
-
-              <Image
-                src="https://images.ctfassets.net/hq1jrfsbgjdg/5YJl4IH6gvSap977ivgeEu/bc7eef43cbac3941dc388b0299d2b5ed/MeHero.webp"
-                filter="saturate(1.1)"
-                w={{ base: '300px', lg: '350px' }}
-                h={{ base: '300px', lg: '350px' }}
-                alt="Srijan Srivastava"
-              />
-            </ScrollWithReveal>
-          </Box>
-        </Flex>
+        <Stack margin="auto">
+          <ImageWithSvg
+            svgId="26432"
+            imageSize={{ base: '450px', lg: '450px' }}
+            imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/3Y7RUoyLJi2xsd0lLUoMDj/95a362afa59299b136cdc77036829537/Srijan_Srivastava_-_Portfolio_Image_2.webp"
+          />
+        </Stack>
       </SimpleGrid>
     </>
   );

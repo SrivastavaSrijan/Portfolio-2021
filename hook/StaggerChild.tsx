@@ -1,14 +1,19 @@
 import { Flex } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 
-export default function StaggerChild({ children, direction, ...rest }) {
+export default function StaggerChild({
+  children,
+  direction,
+  delay = 0.3,
+  ...rest
+}) {
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
+        delayChildren: delay,
         staggerChildren: 0.2,
       },
     },

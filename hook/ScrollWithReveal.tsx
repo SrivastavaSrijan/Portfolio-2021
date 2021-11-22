@@ -1,24 +1,27 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import SlideUpWhenVisible from './FadeInWhenVisible';
+import FadeInWhenVisible from './FadeInWhenVisible';
 
 export default function ScrollWithReveal({
   children,
   inputRange = [0.1, 0.15],
   outputRange = [1, 1.5],
+  delay = 0,
+  ...rest
 }) {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, inputRange, outputRange);
 
   return (
-    <SlideUpWhenVisible>
+    <FadeInWhenVisible delay={delay}>
       <motion.div style={{ scale }}>
         <motion.div
           style={{
             scaleY: scrollYProgress,
+            ...rest,
           }}
         />
         {children}
       </motion.div>
-    </SlideUpWhenVisible>
+    </FadeInWhenVisible>
   );
 }

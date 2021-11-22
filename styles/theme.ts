@@ -24,7 +24,7 @@ const fluidType = (minFont, maxFont) => {
 export const colors = {
   background: '#FFFFFD',
   secondary: '#FAFAFA',
-  complement: '#E6B422',
+  complement: '#DB235C',
   displayColor: '#232323',
   textPrimary: '#3a3a3a',
   textSecondary: '#3a3a3a',

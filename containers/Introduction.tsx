@@ -1,23 +1,6 @@
-import {
-  Link,
-  Text,
-  Stack,
-  Heading,
-  Box,
-  Button,
-  IconButton,
-  Image,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import {
-  FaEnvelope,
-  FaGg,
-  FaGithub,
-  FaHandSparkles,
-  FaJava,
-  FaLinkedin,
-  FaRocket,
-} from 'react-icons/fa';
+import { Text, Stack, Heading, Box } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/layout';
+import { FaHandSparkles, FaRocket } from 'react-icons/fa';
 import useMediaQuery from '../hook/useMediaQuery';
 import ReactGA from 'react-ga';
 import TextLoop from 'react-text-loop';
@@ -27,6 +10,7 @@ import StaggerChild from '../hook/StaggerChild';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 import { RoundedTextIcon } from '../components/RoundedTextIcon';
 import { ContactMeButtons } from '../components/ContactMeButtons';
+import ImageWithSvg from '../components/ImageWithSvg';
 
 export default function Introduction() {
   const isLargerThan800 = useMediaQuery(800);
@@ -37,8 +21,8 @@ export default function Introduction() {
     });
   };
   return (
-    <>
-      <Stack justifyContent="flex-start" alignItems="flex-start" minH="50vh">
+    <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={2}>
+      <Stack justifyContent="flex-start" alignItems="flex-start">
         <FadeInWhenVisible>
           <Box>
             <Text
@@ -88,6 +72,9 @@ export default function Introduction() {
               })}
             </TextLoop>
           </Heading>
+        </StaggerChild>
+
+        <StaggerChild direction="column nowrap" delay={0.7}>
           <RoundedTextIcon
             icon={<FaRocket fill={colors.textSecondary} />}
             iconBg={'button1'}
@@ -98,13 +85,20 @@ export default function Introduction() {
             icon={<FaHandSparkles fill={colors.textSecondary} />}
             iconBg={'button1'}
             mt={2}
+            mb={5}
             text={
               'Frontend Developer proficient with Angular, JavaScript and React'
             }
           />
         </StaggerChild>
-        <ContactMeButtons />
+        <ContactMeButtons delay={1} />
       </Stack>
-    </>
+      <ImageWithSvg
+        svgId="150717"
+        imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/36XDujqnCM6NQkZUg2PEPi/aacb13e5efaff05102e5c262f8d70ca6/Srijan_Srivastava_-_Portfolio_Image_1.webp"
+        imageSize={{ base: '550px', lg: '550px' }}
+        delay={1.25}
+      />
+    </SimpleGrid>
   );
 }

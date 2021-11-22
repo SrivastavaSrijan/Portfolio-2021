@@ -28,15 +28,12 @@ export default function FeaturedProjects({ projects }) {
     <>
       <Stack spacing={8} w="full">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
-          <SlideUpWhenVisible
-            style={isLargerThan800 && { gridColumn: '2', gridRow: '1' }}
+          <Stack
+            spacing={1}
+            style={!isLargerThan800 ? {} : { gridColumn: '2', gridRow: '1' }}
           >
-            <Stack spacing={1}>
-              <Stack
-                isInline
-                alignItems="center"
-                justifyContent="space-between"
-              >
+            <Stack isInline alignItems="center" justifyContent="space-between">
+              <SlideUpWhenVisible>
                 <Heading
                   fontSize="display"
                   lineHeight={'95%'}
@@ -47,7 +44,9 @@ export default function FeaturedProjects({ projects }) {
                 >
                   I'm very proud of these...
                 </Heading>
-              </Stack>
+              </SlideUpWhenVisible>
+            </Stack>
+            <FadeInWhenVisible>
               <Text
                 fontSize="display3"
                 color="textSecondary"
@@ -63,8 +62,8 @@ export default function FeaturedProjects({ projects }) {
                   <Text fontSize="display2">Explore more &rarr;</Text>
                 </Link>
               </NextLink>
-            </Stack>
-          </SlideUpWhenVisible>
+            </FadeInWhenVisible>
+          </Stack>
 
           <FadeInWhenVisible>
             <Box>

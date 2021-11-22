@@ -134,7 +134,7 @@ export default function Index({ projects, articles }) {
 
         <Stack
           as="main"
-          spacing="144px"
+          spacing={{ base: '10vh', md: '96px' }}
           justifyContent="center"
           alignItems="flex-start"
           px={{ base: '5vw', md: '10vw' }}
