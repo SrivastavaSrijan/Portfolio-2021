@@ -29,7 +29,7 @@ export default function FeaturedProjects({ projects }) {
       <Stack spacing={8} w="full">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
           <Stack
-            spacing={1}
+            spacing={5}
             style={!isLargerThan800 ? {} : { gridColumn: '2', gridRow: '1' }}
           >
             <Stack isInline alignItems="center" justifyContent="space-between">

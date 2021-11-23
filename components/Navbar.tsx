@@ -4,7 +4,6 @@ import {
   Flex,
   Box,
   Image,
-  Slide,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -15,13 +14,13 @@ import {
   Stack,
   Icon,
   Divider,
-  Text,
+  Heading,
+  Center,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import styled from '@emotion/styled';
 import useMediaQuery from '../hook/useMediaQuery';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { FaBlog, FaHome, FaProjectDiagram } from 'react-icons/fa';
 
 export default function Navbar({ enableTransition }) {
   const isLargerThan768 = useMediaQuery(768);
@@ -42,24 +41,29 @@ export default function Navbar({ enableTransition }) {
         <DrawerOverlay />
         <DrawerContent backgroundColor="button1">
           <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px" minH="56px">
-            <Image src="" w={{ base: '32px', md: '64px' }}></Image>
+          <DrawerHeader
+            borderBottomWidth="1px"
+            minH={{ base: '196px', md: '256px' }}
+            mt={5}
+          >
+            <Stack>
+              <Center>
+                <Image
+                  src="/media/favicon.webp"
+                  w={{ base: '128px', md: '196px' }}
+                ></Image>
+              </Center>
+            </Stack>
           </DrawerHeader>
           <DrawerBody>
-            <Stack spacing="56px" mt="56px">
+            <Stack spacing="16px" mt="56px">
               <NextLink href="/" passHref>
                 <Button
                   as="a"
                   variant="ghost"
-                  bgColor="color1"
-                  _hover={{
-                    background: 'black.500',
-                  }}
-                  _active={{
-                    background: 'black.500',
-                  }}
-                  color="background"
+                  colorScheme="textPrimary"
                   fontSize="display2"
+                  size="lg"
                 >
                   Home
                 </Button>
@@ -67,16 +71,10 @@ export default function Navbar({ enableTransition }) {
               <NextLink href="/projects" passHref>
                 <Button
                   as="a"
-                  bgColor="color1"
-                  _hover={{
-                    background: 'black.500',
-                  }}
-                  _active={{
-                    background: 'black.500',
-                  }}
                   variant="ghost"
-                  color="background"
+                  colorScheme="textPrimary"
                   fontSize="display2"
+                  size="lg"
                 >
                   Projects
                 </Button>
@@ -84,16 +82,10 @@ export default function Navbar({ enableTransition }) {
               <NextLink href="/blog" passHref>
                 <Button
                   as="a"
-                  bgColor="color1"
                   variant="ghost"
-                  _hover={{
-                    background: 'black.500',
-                  }}
-                  _active={{
-                    background: 'black.500',
-                  }}
-                  color="background"
+                  colorScheme="textPrimary"
                   fontSize="display2"
+                  size="lg"
                 >
                   Blog
                 </Button>
@@ -119,9 +111,16 @@ export default function Navbar({ enableTransition }) {
         background="background"
       >
         <NextLink href="/" passHref>
-          <Image src="" w={{ base: '32px', md: '48px' }}></Image>
+          <Image></Image>
         </NextLink>
-        <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} color="button1" />
+        <Icon
+          as={AiOutlineMenu}
+          w={7}
+          h={7}
+          onClick={onOpen}
+          color="button1"
+          cursor="pointer"
+        />
       </Flex>
       <NavbarDrawer />
     </Box>

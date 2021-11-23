@@ -13,7 +13,7 @@ export default function LatestArticle({ articles }) {
       w="full"
     >
       <Flex alignItems="center" justifyContent="space-between" color="button1">
-        <Stack spacing={1}>
+        <Stack spacing={5}>
           <SlideUpWhenVisible>
             <Heading
               fontSize="display"

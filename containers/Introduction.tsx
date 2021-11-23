@@ -21,7 +21,11 @@ export default function Introduction() {
     });
   };
   return (
-    <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={2}>
+    <SimpleGrid
+      columns={{ sm: 1, md: 2 }}
+      spacing={isLargerThan800 ? 10 : 2}
+      minH="75vh"
+    >
       <Stack justifyContent="flex-start" alignItems="flex-start">
         <FadeInWhenVisible>
           <Box>
