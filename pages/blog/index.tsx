@@ -18,6 +18,7 @@ import readingTime from 'reading-time';
 import dateFormat from 'dateformat';
 import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
 import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
+import { OpenGraphTags } from '../../components/OpenGraphTags';
 export default function Index({ articles }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => setQuery(e.target.value);
@@ -26,38 +27,10 @@ export default function Index({ articles }) {
   return (
     <Container enableTransition={true}>
       <Head>
-        <title>Srijan Srivastava | Portfolio | Blog</title>
-        <meta name="title" content="Srijan Srivastava | Portfolio | Blog" />
-        <meta
-          name="description"
-          content="Musings by Srijan Srivastava where he writes about tech, business and entertainment "
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://srijansrivastava.tech/blog" />
-        <meta
-          property="og:title"
-          content="Srijan Srivastava | Portfolio | Blog"
-        />
-        <meta
-          property="og:description"
-          content="Musings by Srijan Srivastava where he writes about tech, business and entertainment "
-        />
-        <meta property="og:image" content="https://i.imgur.com/dWmBCSl.png" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://srijansrivastava.tech/" />
-        <meta
-          property="twitter:title"
-          content="Srijan Srivastava | Portfolio | Blog"
-        />
-        <meta
-          property="twitter:description"
-          content="Musings by Srijan Srivastava where he writes about tech, business and entertainment "
-        />
-        <meta
-          property="twitter:image"
-          content="https://i.imgur.com/dWmBCSl.png"
+        <title>Srijan | Blog</title>
+        <OpenGraphTags
+          pageTitle="Srijan | Blog"
+          pageDesc="Musings by Srijan Srivastava where he writes about tech, business and entertainment."
         />
       </Head>
 

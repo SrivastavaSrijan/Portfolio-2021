@@ -15,6 +15,7 @@ import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 import { FaSearch } from 'react-icons/fa';
 import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
 import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
+import { OpenGraphTags } from '../../components/OpenGraphTags';
 export default function Projects({ projects }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => {
@@ -25,47 +26,10 @@ export default function Projects({ projects }) {
     <>
       <Container enableTransition={true}>
         <Head>
-          <title>Srijan Srivastava - Software Engineer</title>
-          <meta
-            name="title"
-            content="Srijan Srivastava | Portfolio | Projects"
-          />
-          <meta
-            name="description"
-            content="Repository of all of Srijan Srivastava's projects and web applications on his portfolio website."
-          />
-
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://srijansrivastava.tech/projects"
-          />
-          <meta
-            property="og:title"
-            content="Srijan Srivastava | Portfolio | Projects"
-          />
-          <meta
-            property="og:description"
-            content="Repository of all of Srijan Srivastava's projects and web applications on his portfolio website."
-          />
-          <meta property="og:image" content="https://i.imgur.com/AOMvmeJ.png" />
-
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://srijansrivastava.tech/projects"
-          />
-          <meta
-            property="twitter:title"
-            content="Srijan Srivastava | Portfolio | Projects"
-          />
-          <meta
-            property="twitter:description"
-            content="Repository of all of Srijan Srivastava's projects and web applications on his portfolio website."
-          />
-          <meta
-            property="twitter:image"
-            content="https://i.imgur.com/AOMvmeJ.png"
+          <title>Srijan | Projects</title>
+          <OpenGraphTags
+            pageDesc="Repository of all of Srijan Srivastava's projects and web applications on his portfolio website."
+            pageTitle="Srijan | Projects"
           />
         </Head>
         <Stack

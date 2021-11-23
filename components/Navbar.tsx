@@ -61,7 +61,7 @@ export default function Navbar({ enableTransition }) {
                 <Button
                   as="a"
                   variant="ghost"
-                  colorScheme="textPrimary"
+                  colorScheme="white"
                   fontSize="display2"
                   size="lg"
                 >
@@ -72,7 +72,7 @@ export default function Navbar({ enableTransition }) {
                 <Button
                   as="a"
                   variant="ghost"
-                  colorScheme="textPrimary"
+                  colorScheme="white"
                   fontSize="display2"
                   size="lg"
                 >
@@ -83,7 +83,7 @@ export default function Navbar({ enableTransition }) {
                 <Button
                   as="a"
                   variant="ghost"
-                  colorScheme="textPrimary"
+                  colorScheme="white"
                   fontSize="display2"
                   size="lg"
                 >

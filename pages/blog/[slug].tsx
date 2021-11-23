@@ -18,7 +18,7 @@ export default function Post({ metadata, source, views }) {
   return (
     <>
       <NextSeo
-        title={'Srijan Srivastava | Portfolio | Blog | ' + metadata.title}
+        title={'Srijan | Blog | ' + metadata.title}
         description={metadata.summary}
         canonical={`https://srijansrivastava.tech/blog/${metadata.slug}`}
         openGraph={{
@@ -59,7 +59,7 @@ export default function Post({ metadata, source, views }) {
         dateModified={metadata.date}
         authorName="Srijan Srivastava"
         publisherName="Srijan Srivastava"
-        publisherLogo="https://i.imgur.com/CbbuXeI.png"
+        publisherLogo="media/favicon.webp"
         description={metadata.summary}
       />
       <Container enableTransition={true}>
