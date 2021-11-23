@@ -25,6 +25,7 @@ export default function Introduction() {
       columns={{ sm: 1, md: 2 }}
       spacing={isLargerThan800 ? 10 : 2}
       minH="75vh"
+      minW="100%"
     >
       <Stack justifyContent="flex-start" alignItems="flex-start">
         <FadeInWhenVisible>

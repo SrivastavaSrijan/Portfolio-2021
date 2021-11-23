@@ -16,22 +16,37 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:site_name" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
-
+      <meta property="og:type" content="website" />
       {/* Image Tags */}
 
       {/* MS Tile - for Microsoft apps */}
-      <meta name="msapplication-TileImage" content="media/preview.jpg" />
+      <meta name="msapplication-TileImage" content="/media/preview.jpg" />
 
       {/* Image to display */}
-      <meta property="og:image" content="media/preview.jpg" />
-
-      {/* No need to change anything here */}
-      <meta property="og:type" content="website" />
+      <meta property="og:image" itemProp="image" content="/media/preview.jpg" />
+      <meta
+        property="og:image:secure_url"
+        itemProp="image"
+        content="/media/preview.jpg"
+      />
       <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="600" />
 
-      {/* Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp */}
-      <meta property="og:image:width" content="300" />
-      <meta property="og:image:height" content="300" />
+      {/* Image to display for WhatsApp */}
+      <meta
+        property="og:image"
+        itemProp="image"
+        content="/media/ms-icon-256x256.png"
+      />
+      <meta
+        property="og:image:secure_url"
+        itemProp="image"
+        content="/media/ms-icon-256x256.png"
+      />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
 
       {/* Website to visit when clicked in fb or WhatsApp */}
       <meta property="og:url" content="https://www.srijansrivastava.tech" />
