@@ -23,11 +23,15 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta name="msapplication-TileImage" content="/media/preview.jpg" />
 
       {/* Image to display */}
-      <meta property="og:image" itemProp="image" content="/media/preview.jpg" />
+      <meta
+        property="og:image"
+        itemProp="image"
+        content="https://www.srijansrivastava.tech/media/preview.jpg"
+      />
       <meta
         property="og:image:secure_url"
         itemProp="image"
-        content="/media/preview.jpg"
+        content="https://www.srijansrivastava.tech/media/preview.jpg"
       />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
