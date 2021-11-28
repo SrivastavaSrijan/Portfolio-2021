@@ -28,11 +28,11 @@ const GlobalStyle = ({ children }) => {
           }
           ::-webkit-scrollbar {
             width: 8px;
-            background: #080808;
+            background: ${colors.background};
           }
 
           ::-webkit-scrollbar-thumb {
-            background: #111111;
+            background: ${colors.button1};
             border-radius: 8px;
           }
         `}

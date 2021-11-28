@@ -19,6 +19,20 @@ export default class MyDocument extends NextDocument {
         <meta name="theme-color" content="black" />
         <Head />
         <body>
+          <link
+            itemProp="thumbnailUrl"
+            href="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
+          />
+          <span
+            itemProp="thumbnail"
+            itemScope
+            itemType="http://schema.org/ImageObject"
+          >
+            <link
+              itemProp="url"
+              href="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
+            />
+          </span>
           <Main />
           <NextScript />
         </body>

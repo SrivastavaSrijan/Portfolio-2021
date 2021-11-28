@@ -9,19 +9,17 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       />
       {/* HTML Meta Tags */}
       <meta name="description" content={pageDesc} />
-
       {/* Facebook Meta Tags */}
-      <meta property="og:url" content="http://srijansrivastava.tech/" />
+      <meta property="og:url" content="https://www.srijansrivastava.tech/" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:site_name" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:type" content="website" />
+      <meta property="fb:app_id" content="991880091543584" />
       {/* Image Tags */}
-
       {/* MS Tile - for Microsoft apps */}
       <meta name="msapplication-TileImage" content="/media/preview.jpg" />
-
       {/* Image to display */}
       <meta
         property="og:image"
@@ -36,25 +34,22 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="600" />
-
       {/* Image to display for WhatsApp */}
       <meta
-        property="og:image"
+        property="og:image:alt"
         itemProp="image"
-        content="/media/ms-icon-256x256.png"
+        content="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
       />
       <meta
-        property="og:image:secure_url"
+        property="og:image:secure_url:alt"
         itemProp="image"
-        content="/media/ms-icon-256x256.png"
+        content="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
       />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="256" />
       <meta property="og:image:height" content="256" />
-
       {/* Website to visit when clicked in fb or WhatsApp */}
       <meta property="og:url" content="https://www.srijansrivastava.tech" />
-
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta
@@ -68,7 +63,6 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content="media/preview.jpg" />
-
       {/* Favicon links */}
       <link
         rel="apple-touch-icon"
