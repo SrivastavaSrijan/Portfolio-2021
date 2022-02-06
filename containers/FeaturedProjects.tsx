@@ -11,7 +11,6 @@ import NextLink from 'next/link';
 import Cards from '../components/Card';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import ReactGA from 'react-ga';
-import ScrollWithReveal from '../hook/ScrollWithReveal';
 import useMediaQuery from '../hook/useMediaQuery';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
 

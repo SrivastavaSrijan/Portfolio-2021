@@ -22,6 +22,7 @@ export default function Cards({
   title,
   subtitle,
   desc = null,
+  isFeatured,
   githubLink,
   deployLink,
   tag,
