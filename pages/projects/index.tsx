@@ -105,11 +105,11 @@ const client = require('contentful').createClient({
 export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: 'projects',
-    order: 'sys.updatedAt',
+    order: 'sys.createdAt',
   });
   return {
     props: {
-      projects: data.items.reverse(),
+      projects: data.items,
     },
   };
 }

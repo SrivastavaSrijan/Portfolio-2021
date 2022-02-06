@@ -6,6 +6,7 @@ import useMediaQuery from '../hook/useMediaQuery';
 import { FaEnvelope, FaFileAlt, FaLinkedin } from 'react-icons/fa';
 import StaggerChild from '../hook/StaggerChild';
 
+/** Global contact buttons used in the Introduction and Footer */
 export const ContactMeButtons = ({ delay = 0, ...rest }) => {
   const isLargerThan800 = useMediaQuery(800);
   const handleClick = (event) => {

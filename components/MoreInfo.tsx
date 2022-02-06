@@ -46,7 +46,7 @@ export const MoreInfo = ({ text, body, footerText }) => {
           </PopoverTrigger>
           <PopoverContent bg="secondary" padding="0" borderColor="button1">
             <PopoverArrow bg="button1" />
-            <PopoverBody>{body}</PopoverBody>
+            <PopoverBody fontSize="display5">{body}</PopoverBody>
             <PopoverFooter bg="button1">
               <Text
                 textAlign="center"
@@ -73,11 +73,11 @@ export const MoreInfo = ({ text, body, footerText }) => {
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-              <ModalCloseButton color="button1" bgColor="black" />
-              <ModalBody bg="secondary" padding="0" borderColor="button1">
+              <ModalCloseButton color="button1" bgColor="black.600" />
+              <ModalBody bg="secondary" padding={4} borderColor="button1">
                 {body}
               </ModalBody>
-              <ModalFooter bg="button1">
+              <ModalFooter bg="button1" justifyContent="center">
                 <Text
                   textAlign="center"
                   padding="1.5"

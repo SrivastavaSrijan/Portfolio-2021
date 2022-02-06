@@ -52,9 +52,9 @@ export default function ContactMe() {
             textAlign="center"
             maxW="32rem"
           >
-            If you're looking for a frontend developer with an eye for detail
-            and a knack for solving complex use cases, I'm open to new and
-            exciting opportunities!
+            If you're looking for a developer with an eye for detail and a knack
+            for solving complex use cases, I'm open to new and exciting
+            opportunities!
             <br />
             <chakra.span
               color="button1"

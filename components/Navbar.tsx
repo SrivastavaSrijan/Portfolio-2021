@@ -14,13 +14,11 @@ import {
   Stack,
   Icon,
   Divider,
-  Heading,
   Center,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import useMediaQuery from '../hook/useMediaQuery';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { FaBlog, FaHome, FaProjectDiagram } from 'react-icons/fa';
 
 export default function Navbar({ enableTransition }) {
   const isLargerThan768 = useMediaQuery(768);

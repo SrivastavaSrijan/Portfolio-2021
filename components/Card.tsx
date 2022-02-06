@@ -1,13 +1,12 @@
+import React from 'react';
 import {
   Text,
   Stack,
   Divider,
-  ScaleFade,
   Link,
   UnorderedList,
   ListItem,
   Box,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import ReactGA from 'react-ga';
@@ -16,9 +15,8 @@ import Image from './ChakraNextImage';
 
 import CodeTags from './CodeTags';
 import { colors } from '../styles/theme';
-import StaggerChild from '../hook/StaggerChild';
-import React from 'react';
 
+/** Global Project Cards used across the portfolio */
 export default function Cards({
   imageURL,
   title,
@@ -26,7 +24,6 @@ export default function Cards({
   desc = null,
   githubLink,
   deployLink,
-  isFeatured,
   tag,
 }) {
   const handleClick = (event) => {
@@ -35,7 +32,6 @@ export default function Cards({
       action: event,
     });
   };
-  let mdxSource = null;
   return (
     <Box
       bg="secondary"
@@ -48,10 +44,9 @@ export default function Cards({
         <Image
           width={1250}
           height={600}
-          w="auto"
-          h="auto"
+          objectFit="contain"
           src={imageURL}
-          alt="project image"
+          alt={title}
         ></Image>
         <Stack px={4} py={2}>
           <Stack isInline justifyContent="space-between" alignItems="center">
@@ -70,6 +65,7 @@ export default function Cards({
               >
                 {title}
               </Text>
+
               {githubLink && (
                 <Link
                   href={githubLink}
@@ -100,13 +96,20 @@ export default function Cards({
               )}
             </Stack>
           </Stack>
-
+          <Text
+            fontSize="display4"
+            color="textPrimary"
+            fontWeight={400}
+            p="0 4px 0 16px"
+          >
+            {subtitle}
+          </Text>
           <Stack>
             <CodeTags tags={tag}></CodeTags>
           </Stack>
           {desc ? (
             <>
-              <Divider color="textSecondary" />
+              <Divider color="textSecondary" height={6} />
               <Text color="textSecondary" fontSize="display3">
                 <UnorderedList>
                   {desc.split('\n').map((text: string, index: number) => (

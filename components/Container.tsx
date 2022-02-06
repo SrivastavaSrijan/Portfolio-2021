@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import ReactGA from 'react-ga';
 import { colors } from '../styles/theme';
 
+/** Root container for the application, contains the Navbar, Body and the footer */
 const Container = ({ enableTransition, children }) => {
   useEffect(() => {
     ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE);
@@ -17,8 +18,15 @@ const Container = ({ enableTransition, children }) => {
         {children}
       </Flex>
       <Stack alignItems="center" mt={20} mb={5}>
-        <Text textAlign="center" fontSize="xs">
-          <chakra.span fontWeight="semibold" color="textPrimary">
+        <Text textAlign="center" fontSize="xs" color="textPrimary">
+          <chakra.span fontWeight={300}>
+            You say we're small and not worth the mention;
+            <br />
+            I'm sure we're taller in another dimension
+            <br />
+            <br />
+          </chakra.span>
+          <chakra.span fontWeight={600}>
             Made with
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +42,7 @@ const Container = ({ enableTransition, children }) => {
             >
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
-            by Srijan.
+            by Srijan
           </chakra.span>{' '}
         </Text>
       </Stack>

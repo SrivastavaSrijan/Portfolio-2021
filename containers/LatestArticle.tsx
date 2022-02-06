@@ -32,7 +32,7 @@ export default function LatestArticle({ articles }) {
               I've had some sort of a journal for as long as I can remember!
               Some of my articles make the cut and I post them here.
             </Text>
-            <NextLink href="/projects">
+            <NextLink href="/blog">
               <Link>
                 <Text fontSize="display2">View all articles &rarr;</Text>
               </Link>

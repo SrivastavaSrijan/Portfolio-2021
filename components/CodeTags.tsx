@@ -1,18 +1,9 @@
-import {
-  TagLeftIcon,
-  Tag,
-  TagLabel,
-  Stack,
-  As,
-  Box,
-  Flex,
-} from '@chakra-ui/react';
+import { TagLeftIcon, Tag, TagLabel, As, Box, Flex } from '@chakra-ui/react';
 import {
   FaReact,
   FaJs,
   FaSass,
   FaCode,
-  FaGithub,
   FaJava,
   FaAngular,
   FaAndroid,
@@ -24,28 +15,42 @@ import {
   FaBookOpen,
   FaMobile,
   FaNodeJs,
+  FaForumbee,
+  FaDatabase,
 } from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 import {
+  SiAiohttp,
+  SiContentful,
+  SiCss3,
+  SiEslint,
   SiExpress,
   SiFirebase,
+  SiGoogleanalytics,
   SiLogmein,
   SiNextdotjs,
   SiNumpy,
   SiPostgresql,
+  SiPrettier,
   SiRedux,
   SiReduxsaga,
   SiRxdb,
+  SiSass,
+  SiStyledcomponents,
+  SiTypescript,
+  SiUnsplash,
 } from 'react-icons/si';
 import StaggerChild from '../hook/StaggerChild';
 
 import useMediaQuery from '../hook/useMediaQuery';
+
+/** Code Tags used in Cards.tsx */
 export default function CodeTags({ tags }) {
-  const getTag = (tag) => {
-    switch (tag) {
+  const getTag = (tag: string) => {
+    switch (tag.trim()) {
       case 'React':
         return ['blue', FaReact];
-      case 'Javascript':
+      case 'JavaScript':
         return ['yellow', FaJs];
       case 'Sass':
         return ['pink', FaSass];
@@ -79,10 +84,10 @@ export default function CodeTags({ tags }) {
         return ['green', FaMobile];
       case 'PostgreSQL':
         return ['blue', SiPostgresql];
-      case 'NodeJs':
+      case 'Node':
         return ['green', FaNodeJs];
       case 'Redux':
-        return ['blue', SiRedux];
+        return ['purple', SiRedux];
       case 'RxJs':
         return ['purple', SiRxdb];
       case 'Firebase':
@@ -93,6 +98,32 @@ export default function CodeTags({ tags }) {
         return ['yellow', SiExpress];
       case 'Redux-Saga':
         return ['yellow', SiReduxsaga];
+      case 'SCSS':
+        return ['pink', SiSass];
+      case 'CSSModules':
+        return ['blue', SiCss3];
+      case 'TypeScript':
+        return ['blue', SiTypescript];
+      case 'StyledComponents':
+        return ['pink', SiStyledcomponents];
+      case 'Unsplash':
+        return ['black', SiUnsplash];
+      case 'ESLint':
+        return ['purple', SiEslint];
+      case 'Axios':
+        return ['white', SiAiohttp];
+      case 'Formik':
+        return ['yellow', FaForumbee];
+      case 'Redux Persist':
+      case 'SQLite':
+        return ['black', FaDatabase];
+      case 'Prettier':
+        return ['pink', SiPrettier];
+      case 'Contentful CMS':
+        return ['pink', SiContentful];
+      case 'Google Analytics':
+        return ['pink', SiGoogleanalytics];
+
       default:
         return ['purple', FaCode];
     }
@@ -111,6 +142,7 @@ export default function CodeTags({ tags }) {
         {(tags ?? [])?.map((item) => (
           <Box key={item}>
             <Tag
+              backgroundColor="transparent"
               colorScheme={getTag(item)[0] as string}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
