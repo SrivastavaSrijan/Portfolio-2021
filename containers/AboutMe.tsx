@@ -222,15 +222,12 @@ export default function AboutMe() {
                 }
                 footerText="Why do we care?"
               ></MoreInfo>
-              of our peers and providing them feedback at every step. I also
-              mentor my colleagues in areas of Performance Profiling and any new
-              members that join the project. Occasionally, I conduct interviews
-              with people who want to join our team.
+              of our peers and providing them feedback at every step.
               <br /> <br />
             </Text>
           </FadeInWhenVisible>
         </Stack>
-        <Stack margin="auto" spacing={24}>
+        <Stack margin="auto" spacing={20}>
           <ImageWithSvg
             svgId="26432"
             imageSize={{ base: '450px', lg: '450px' }}
@@ -243,23 +240,21 @@ export default function AboutMe() {
               whiteSpace="pre-line"
               lineHeight={1.5}
             >
-              Being{' '}
+              I’m an innately curious and passionate person who follows{' '}
               <MoreInfo
-                text="obsessed"
+                text="Occam's Razor"
                 body={
                   <ReactiveImage
-                    imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/AI2XRquJHRnOSVgyk80Oc/165c2bec76f5478413aa0c399c998642/MeKid.webp"
-                    alt="Srijan as a 3 year old sitting on a chair"
+                    imageSrc="https://149664534.v2.pressablecdn.com/wp-content/uploads/2017/05/occams-razor-white-300x300.jpg"
+                    alt="Campuses of 3 companies"
                   ></ReactiveImage>
                 }
-                footerText="I was 3 but always enjoyed chilling in front on my dabba PC"
-              ></MoreInfo>{' '}
-              with technology from my childhood, I made my first website when I
-              was 12! Now, that was a far cry from what this portfolio is, but
-              I've always been innately curious. My cross-functional skill set
-              has allowed me to work in different domains alongside&nbsp;
+                footerText="Among competing hypotheses, the one with the fewest assumptions should be selected."
+              ></MoreInfo>
+              religiously. I find the enigma in a challenge beautiful. My
+              cross-functional skill-set has allowed me to work alongside{' '}
               <MoreInfo
-                text="companies that dominate the field."
+                text=" companies that dominate their fields"
                 body={
                   <ReactiveImage
                     imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/1CRaHEqS4MkdCFxDa32GfU/1066b1f217810c257d1038f37bb24c1e/MyOffices.webp"
@@ -267,8 +262,18 @@ export default function AboutMe() {
                   ></ReactiveImage>
                 }
                 footerText="From top, those are offices for Wipro, Doctors without Borders, and Jio!"
-              ></MoreInfo>
-              Outside of work, I'm either tweaking for&nbsp;
+              ></MoreInfo>{' '}
+              in different domains. My professional goal is to work on a
+              consumer-facing product that creates lifelong value in the lives
+              of its users.
+              <br /> <br />
+              <Text fontWeight={600}>
+                I strongly believe that access to the internet is an
+                inalienable, fundamental right and the only way to design is to
+                design with inclusivity in mind.
+              </Text>
+              <br />
+              Outside of work, I'm either tweaking for{' '}
               <MoreInfo
                 text="the perfect pasta recipe,"
                 body={
@@ -277,7 +282,7 @@ export default function AboutMe() {
                     alt="Pasta"
                   ></ReactiveImage>
                 }
-                footerText="A recent recipe I tried out and I have to say it came out squisito"
+                footerText="A recent recipe I tried out and I have to say it came out squisito."
               ></MoreInfo>
               <MoreInfo
                 text="obsessing over some music,"
@@ -291,24 +296,15 @@ export default function AboutMe() {
               ></MoreInfo>
               or having a{' '}
               <MoreInfo
-                text="coffee"
+                text="coffee."
                 body={
                   <ReactiveImage
                     imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/4NWQ5vZM4SaXvoUCf2hjJc/fb457f80bd2f3edf73e02cbe2e6f9a3d/Coffee.webp"
-                    alt="Srijan as a 3 year old sitting on a chair"
+                    alt="Coffee"
                   ></ReactiveImage>
                 }
                 footerText="I know my Caturra from my Bourbon and cupping is my favorite hobby."
               ></MoreInfo>
-              . <br />
-              <br />
-              <Text fontWeight="600">
-                I strongly believe that access to the internet is an
-                inalienable, fundamental right and the only way to design is to
-                design with inclusivity in mind. I love to be challenged by the
-                diversity of users, and to that end, I'm actively looking for an
-                opportunity that constantly challenges me.
-              </Text>
             </Text>
           </FadeInWhenVisible>
         </Stack>

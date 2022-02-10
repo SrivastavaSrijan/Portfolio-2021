@@ -73,6 +73,7 @@ const overrides = {
     hero: fluidType(108, 180),
     display: fluidType(72, 144),
     display2: fluidType(24, 36),
+    display2half: fluidType(20, 30),
     display3: fluidType(16, 24),
     display4: fluidType(16, 18),
     display5: fluidType(14, 16),

@@ -54,7 +54,7 @@ export default function Introduction() {
           </Heading>
           <Heading
             color="textSecondary"
-            fontSize="display2"
+            fontSize="display2half"
             fontWeight="medium"
             whiteSpace="pre-wrap"
             letterSpacing="-1.6px"

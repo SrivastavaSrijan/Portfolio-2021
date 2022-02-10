@@ -14,7 +14,7 @@ export const RoundedTextIcon = ({ text = '', icon, iconBg, ...rest }) => {
       >
         {icon}
       </Flex>
-      <Text fontWeight={100} color="textPrimary">
+      <Text fontWeight={300} color="textPrimary" lineHeight={1.15}>
         {text}
       </Text>
     </Stack>
