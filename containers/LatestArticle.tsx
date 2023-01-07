@@ -10,7 +10,7 @@ export default function LatestArticle({ articles }) {
     <Stack
       spacing={5}
       display={articles.length < 2 ? 'none' : 'block'}
-      w="full"
+      px={{ base: '5vw', md: '10vw' }}
     >
       <Flex alignItems="center" justifyContent="space-between" color="button1">
         <Stack spacing={5}>
@@ -33,9 +33,7 @@ export default function LatestArticle({ articles }) {
               Some of my articles make the cut and I post them here.
             </Text>
             <NextLink href="/blog">
-              <Link>
-                <Text fontSize="display2">View all articles &rarr;</Text>
-              </Link>
+              <Text fontSize="display2">View all articles &rarr;</Text>
             </NextLink>
           </FadeInWhenVisible>
         </Stack>
@@ -44,6 +42,7 @@ export default function LatestArticle({ articles }) {
         {articles.map((article, index) => (
           <FadeInWhenVisible key={index}>
             <Link
+              as="div"
               href={'/blog/' + article.fields.slug}
               _hover={{ textDecoration: 'none' }}
               _focus={{ outline: 'none' }}
@@ -53,7 +52,7 @@ export default function LatestArticle({ articles }) {
                 direction="column"
                 alignItems="flex-start"
                 justifyContent="flex-start"
-                space={2}
+                spacing={2}
                 bg="secondary"
                 borderWidth="0px"
                 px={5}

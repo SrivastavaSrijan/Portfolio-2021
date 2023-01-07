@@ -22,7 +22,6 @@ export default function Cards({
   title,
   subtitle,
   desc = null,
-  isFeatured,
   githubLink,
   deployLink,
   tag,
@@ -41,14 +40,14 @@ export default function Cards({
       py={10}
       rounded="lg"
     >
-      <Link href={deployLink} isExternal>
+      <Link href={deployLink} isExternal as="div">
         <Image
           width={1250}
-          height={600}
+          height={300}
           objectFit="contain"
           src={imageURL}
           alt={title}
-        ></Image>
+        />
         <Stack px={4} py={2}>
           <Stack isInline justifyContent="space-between" alignItems="center">
             <Stack
@@ -106,20 +105,18 @@ export default function Cards({
             {subtitle}
           </Text>
           <Stack>
-            <CodeTags tags={tag}></CodeTags>
+            <CodeTags tags={tag} />
           </Stack>
           {desc ? (
             <>
               <Divider color="textSecondary" height={6} />
-              <Text color="textSecondary" fontSize="display3">
-                <UnorderedList>
-                  {desc.split('\n').map((text: string, index: number) => (
-                    <ListItem fontSize={['xs', 'xs', 'sm', 'sm']} key={index}>
-                      {text}
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </Text>
+              <UnorderedList>
+                {desc.split('\n').map((text: string, index: number) => (
+                  <ListItem fontSize={['xs', 'xs', 'sm', 'sm']} key={index}>
+                    {text}
+                  </ListItem>
+                ))}
+              </UnorderedList>
             </>
           ) : null}
         </Stack>

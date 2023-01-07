@@ -1,17 +1,9 @@
-import { Box, Flex, Link, Stack } from '@chakra-ui/layout';
+import { Box, Flex, Link } from '@chakra-ui/layout';
 import { IconButton } from '@chakra-ui/react';
 import { colors } from '../styles/theme';
 import ReactGA from 'react-ga';
-import useMediaQuery from '../hook/useMediaQuery';
 
-export const RoundedLinkButton = ({
-  link,
-  ariaLabel,
-  gaName,
-  children,
-  ...rest
-}) => {
-  const isLargerThan800 = useMediaQuery(800);
+export const RoundedLinkButton = ({ link, ariaLabel, gaName, children }) => {
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
@@ -21,7 +13,7 @@ export const RoundedLinkButton = ({
   return (
     <Link href={link} isExternal mx={2}>
       <IconButton
-        leftIcon={
+        icon={
           <Flex
             w={4}
             h={4}

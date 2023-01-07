@@ -1,6 +1,5 @@
 import { theme as chakraTheme } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
-import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 // Fluid Typography.
 // font-size  = calc(ZZ + ((1vw - XX) * YY))
@@ -29,7 +28,7 @@ export const colors = {
   textPrimary: '#3a3a3a',
   textSecondary: '#3a3a3a',
   button1: '#EECD6B',
-  button2: '#FFFF9B',
+  button2: '#ffe214',
   button3: '#E6B422',
   borderColor: 'transparent',
 };
@@ -40,13 +39,13 @@ const fonts = {
   heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
 };
 
-const breakpoints = createBreakpoints({
+const breakpoints = {
   base: '0em',
   sm: '30em',
   md: '48em',
   lg: '80em',
   xl: '80em',
-});
+};
 
 const Link = {
   baseStyle: {

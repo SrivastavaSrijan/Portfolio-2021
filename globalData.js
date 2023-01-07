@@ -13,7 +13,6 @@ const heroText = [
   { key: 3, item: 'democratizing the internet', emoji: '💻✊🏿' },
   { key: 5, item: 'resilient by definition', emoji: '🐜' },
   { key: 6, item: 'always learning', emoji: '📕' },
-  { key: 7, item: 'fighting for #DalitLivesMatter', emoji: '✊🏿' },
   { key: 9, item: 'a writer', emoji: '🖋️' },
   { key: 4, item: 'a coffee snob', emoji: '☕' },
   { key: 10, item: 'a social worker', emoji: '🥰' },

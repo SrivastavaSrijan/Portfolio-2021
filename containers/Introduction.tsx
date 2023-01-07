@@ -2,7 +2,6 @@ import { Text, Stack, Heading, Box } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/layout';
 import { FaHandSparkles, FaRocket } from 'react-icons/fa';
 import useMediaQuery from '../hook/useMediaQuery';
-import ReactGA from 'react-ga';
 import TextLoop from 'react-text-loop';
 import { getHeroText } from '../globalData';
 import { colors } from '../styles/theme';
@@ -14,12 +13,7 @@ import ImageWithSvg from '../components/ImageWithSvg';
 
 export default function Introduction() {
   const isLargerThan800 = useMediaQuery(800);
-  const handleClick = (event) => {
-    ReactGA.event({
-      category: 'click',
-      action: event,
-    });
-  };
+
   return (
     <SimpleGrid
       columns={{ sm: 1, md: 2 }}
@@ -61,15 +55,14 @@ export default function Introduction() {
             mt={5}
           >
             <Box color="displayColor" as="span">
-              and I'm
-            </Box>{' '}
+              and I'm{' '}
+            </Box>
             <TextLoop adjustingSpeed={100} delay={1700} noWrap={true}>
-              {getHeroText().map(({ item, emoji, key, index }) => {
+              {getHeroText().map(({ item, emoji, key }) => {
                 return (
                   <Text key={key} color="button1" fontWeight="light">
-                    {item}
+                    {item}{' '}
                     <span role="img" aria-label={item}>
-                      {' '}
                       {emoji}
                     </span>
                   </Text>
@@ -91,9 +84,7 @@ export default function Introduction() {
             iconBg={'button1'}
             mt={2}
             mb={5}
-            text={
-              'Frontend Developer proficient with Angular, JavaScript and React'
-            }
+            text={'Discerning web developer building robust, extensible apps'}
           />
         </StaggerChild>
         <ContactMeButtons delay={1} />

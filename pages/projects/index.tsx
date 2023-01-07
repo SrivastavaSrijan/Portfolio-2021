@@ -1,12 +1,5 @@
 import { useState } from 'react';
-import {
-  Stack,
-  Heading,
-  Text,
-  SimpleGrid,
-  Divider,
-  SlideFade,
-} from '@chakra-ui/react';
+import { Stack, Heading, Text, SimpleGrid, Divider } from '@chakra-ui/react';
 
 import Cards from '../../components/Card';
 import Container from '../../components/Container';
@@ -16,6 +9,8 @@ import { FaSearch } from 'react-icons/fa';
 import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
 import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
 import { OpenGraphTags } from '../../components/OpenGraphTags';
+import { createClient } from 'contentful';
+
 export default function Projects({ projects }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => {
@@ -56,10 +51,9 @@ export default function Projects({ projects }) {
                 Archive of applications I've designed and developed.
               </Text>
               <InputGroup maxW="400px">
-                <InputRightElement
-                  pointerEvents="none"
-                  children={<FaSearch />}
-                />
+                <InputRightElement pointerEvents="none">
+                  <FaSearch />
+                </InputRightElement>
                 <Input
                   type="text"
                   placeholder="Search projects"
@@ -85,7 +79,6 @@ export default function Projects({ projects }) {
                     desc={project.fields.description}
                     githubLink={project.fields.githubLink}
                     deployLink={project.fields.deployLink}
-                    isFeatured={false}
                     tag={project.fields.tags}
                   />
                 </FadeInWhenVisible>
@@ -97,7 +90,7 @@ export default function Projects({ projects }) {
   );
 }
 
-const client = require('contentful').createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });

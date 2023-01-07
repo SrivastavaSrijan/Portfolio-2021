@@ -1,13 +1,5 @@
 import { useState } from 'react';
-import {
-  Stack,
-  Heading,
-  Text,
-  Divider,
-  Flex,
-  Box,
-  SlideFade,
-} from '@chakra-ui/react';
+import { Stack, Heading, Text, Divider, Flex, Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Container from '../../components/Container';
@@ -19,6 +11,8 @@ import dateFormat from 'dateformat';
 import SlideUpWhenVisible from '../../hook/SlideUpWhenVisible';
 import FadeInWhenVisible from '../../hook/FadeInWhenVisible';
 import { OpenGraphTags } from '../../components/OpenGraphTags';
+import { createClient } from 'contentful';
+
 export default function Index({ articles }) {
   const [query, setQuery] = useState('');
   const handleChange = (e) => setQuery(e.target.value);
@@ -36,13 +30,13 @@ export default function Index({ articles }) {
 
       <Stack
         as="main"
-        spacing={10}
+        spacing={{ base: '10vh', md: '96px' }}
         justifyContent="center"
         px={['5vw', '10vw']}
         my={['5vh', '5vh', '12.5vh', '12.5vh']}
       >
-        <Stack spacing={5}>
-          <SlideUpWhenVisible>
+        <SlideUpWhenVisible>
+          <Stack spacing={5}>
             <Heading
               fontSize="display"
               lineHeight={'95%'}
@@ -57,7 +51,9 @@ export default function Index({ articles }) {
               Musings on tech, business and everything in between.
             </Text>
             <InputGroup maxW="400px">
-              <InputRightElement pointerEvents="none" children={<FaSearch />} />
+              <InputRightElement pointerEvents="none">
+                <FaSearch />
+              </InputRightElement>
               <Input
                 type="text"
                 placeholder="Search articles"
@@ -66,15 +62,15 @@ export default function Index({ articles }) {
               />
             </InputGroup>
             <Divider />
-          </SlideUpWhenVisible>
-        </Stack>
+          </Stack>
+        </SlideUpWhenVisible>
         <Stack spacing={5}>
           {articles
             .filter((e) =>
               e.fields.title.toLowerCase().includes(query.toLowerCase()),
             )
-            .map((article) => (
-              <FadeInWhenVisible>
+            .map((article, index) => (
+              <FadeInWhenVisible key={index}>
                 <Stack
                   key={article.fields.date}
                   direction={isLargerThan1024 ? 'row' : 'column'}
@@ -86,10 +82,10 @@ export default function Index({ articles }) {
                     display={isLargerThan1024 ? 'block' : 'none'}
                   >
                     {dateFormat(Date.parse(article.fields.date), 'mmm d yyyy')}
-                    <br />{' '}
-                    <Text fontSize="sm" textAlign="right">
-                      {readingTime(article.fields.body).text}
-                    </Text>
+                  </Text>
+                  <br />{' '}
+                  <Text fontSize="sm" textAlign="right">
+                    {readingTime(article.fields.body).text}
                   </Text>
                   <Text
                     color="textSecondary"
@@ -104,23 +100,21 @@ export default function Index({ articles }) {
                   </Text>
                   <Flex flexDirection="column" px={isLargerThan1024 ? 10 : 0}>
                     <Link href={'/blog/' + article.fields.slug}>
-                      <a>
-                        <Text
-                          color="displayColor"
-                          fontSize="xl"
-                          fontWeight="bold"
-                          cursor="pointer"
-                        >
-                          {article.fields.title}
-                        </Text>
-                        <Text color="textSecondary">
-                          {article.fields.summary}
-                        </Text>
+                      <Text
+                        color="displayColor"
+                        fontSize="xl"
+                        fontWeight="bold"
+                        cursor="pointer"
+                      >
+                        {article.fields.title}
+                      </Text>
+                      <Text color="textSecondary">
+                        {article.fields.summary}
+                      </Text>
 
-                        <Text color="button1" cursor="pointer">
-                          Learn more &rarr;
-                        </Text>
-                      </a>
+                      <Text color="button1" cursor="pointer">
+                        Learn more &rarr;
+                      </Text>
                     </Link>
                   </Flex>
                 </Stack>
@@ -132,7 +126,7 @@ export default function Index({ articles }) {
   );
 }
 
-const client = require('contentful').createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });

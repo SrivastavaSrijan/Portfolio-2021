@@ -17,17 +17,12 @@ import {
   Center,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import useMediaQuery from '../hook/useMediaQuery';
 import { AiOutlineMenu } from 'react-icons/ai';
 
-export default function Navbar({ enableTransition }) {
-  const isLargerThan768 = useMediaQuery(768);
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const firstField = useRef();
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: '-100%' },
-  };
+
   const NavbarDrawer = () => (
     <>
       <Drawer
@@ -45,12 +40,7 @@ export default function Navbar({ enableTransition }) {
             mt={5}
           >
             <Stack>
-              <Center>
-                <Image
-                  src="/media/favicon.webp"
-                  w={{ base: '128px', md: '196px' }}
-                ></Image>
-              </Center>
+              <Center></Center>
             </Stack>
           </DrawerHeader>
           <DrawerBody>

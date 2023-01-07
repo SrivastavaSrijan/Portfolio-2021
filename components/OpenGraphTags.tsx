@@ -10,7 +10,7 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       {/* HTML Meta Tags */}
       <meta name="description" content={pageDesc} />
       {/* Facebook Meta Tags */}
-      <meta property="og:url" content="https://www.srijansrivastava.tech/" />
+      <meta property="og:url" content="https://www.srijansrivastava.com/" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:site_name" content={pageTitle} />
@@ -24,12 +24,12 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta
         property="og:image"
         itemProp="image"
-        content="https://www.srijansrivastava.tech/media/preview.jpg"
+        content="https://www.srijansrivastava.com/media/preview.jpg"
       />
       <meta
         property="og:image:secure_url"
         itemProp="image"
-        content="https://www.srijansrivastava.tech/media/preview.jpg"
+        content="https://www.srijansrivastava.com/media/preview.jpg"
       />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
@@ -38,27 +38,27 @@ export const OpenGraphTags = ({ pageTitle, pageDesc }) => {
       <meta
         property="og:image:alt"
         itemProp="image"
-        content="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
+        content="https://www.srijansrivastava.com/media/ms-icon-256x256.png"
       />
       <meta
         property="og:image:secure_url:alt"
         itemProp="image"
-        content="https://www.srijansrivastava.tech/media/ms-icon-256x256.png"
+        content="https://www.srijansrivastava.com/media/ms-icon-256x256.png"
       />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="256" />
       <meta property="og:image:height" content="256" />
       {/* Website to visit when clicked in fb or WhatsApp */}
-      <meta property="og:url" content="https://www.srijansrivastava.tech" />
+      <meta property="og:url" content="https://www.srijansrivastava.com" />
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:domain"
-        content="https://www.srijansrivastava.tech"
+        content="https://www.srijansrivastava.com"
       />
       <meta
         property="twitter:url"
-        content="https://www.srijansrivastava.tech/"
+        content="https://www.srijansrivastava.com/"
       />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />

@@ -4,22 +4,22 @@ import Container from '../components/Container';
 import Introduction from '../containers/Introduction';
 import FeaturedProjects from '../containers/FeaturedProjects';
 import LatestArticle from '../containers/LatestArticle';
-import AboutMe from '../containers/AboutMe';
+import About from '../containers/About';
 import ContactMe from '../containers/ContactMe';
 import { OpenGraphTags } from '../components/OpenGraphTags';
+import { createClient } from 'contentful';
 
 export default function Index({ projects, articles }) {
   return (
     <>
+      <Head>
+        <title>Srijan | Portfolio</title>
+        <OpenGraphTags
+          pageTitle="Srijan | Portfolio"
+          pageDesc="Here, you can check out Srijan Srivastava's projects, learn about his experiences, gauge his skills and know why he is the perfect candidate you’re looking for."
+        />
+      </Head>
       <Container enableTransition={true}>
-        <Head>
-          <title>Srijan | Portfolio</title>
-          <OpenGraphTags
-            pageTitle="Srijan | Portfolio"
-            pageDesc="Here, you can check out Srijan Srivastava's projects, learn about his experiences, gauge his skills and know why he is the perfect candidate you’re looking for."
-          />
-        </Head>
-
         <Stack
           as="main"
           spacing={{ base: '10vh', md: '96px' }}
@@ -29,8 +29,8 @@ export default function Index({ projects, articles }) {
           mt={{ base: '5vh', md: '12.5vh' }}
         >
           <Introduction />
-          <AboutMe />
           <FeaturedProjects projects={projects} />
+          <About />
           <LatestArticle articles={articles} />
           <ContactMe />
         </Stack>
@@ -39,7 +39,7 @@ export default function Index({ projects, articles }) {
   );
 }
 
-const client = require('contentful').createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });

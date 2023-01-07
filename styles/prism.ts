@@ -1,5 +1,5 @@
-import { css } from '@emotion/react'
-import { theme } from '@chakra-ui/react'
+import { css } from '@emotion/react';
+import { theme } from '@chakra-ui/react';
 
 const prismBaseTheme = css`
   code {
@@ -137,7 +137,7 @@ const prismBaseTheme = css`
       margin-top: 0 !important;
     }
   }
-`
+`;
 
 export const prismDarkTheme = css`
   ${prismBaseTheme};
@@ -209,4 +209,4 @@ export const prismDarkTheme = css`
     color: ${theme.colors.gray[100]};
     border: 1px solid ${theme.colors.gray[700]};
   }
-`
+`;

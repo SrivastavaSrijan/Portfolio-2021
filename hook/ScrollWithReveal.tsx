@@ -1,4 +1,4 @@
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import FadeInWhenVisible from './FadeInWhenVisible';
 
 export default function ScrollWithReveal({
@@ -8,7 +8,7 @@ export default function ScrollWithReveal({
   delay = 0,
   ...rest
 }) {
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, inputRange, outputRange);
 
   return (

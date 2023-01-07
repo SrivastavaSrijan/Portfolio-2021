@@ -4,8 +4,8 @@ module.exports = {
       'i.imgur.com',
       'images.unsplash.com',
       'media.giphy.com',
-      'srijansrivastava.tech',
+      'srijansrivastava.com',
       'images.ctfassets.net',
     ],
   },
-}
+};

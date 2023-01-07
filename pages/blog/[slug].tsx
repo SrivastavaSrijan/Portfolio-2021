@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Avatar, Text, Heading, Stack } from '@chakra-ui/react';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
@@ -13,6 +12,7 @@ import Image from '../../components/ChakraNextImage';
 import Container from '../../components/Container';
 import PostContainer from '../../containers/PostContainer';
 import MDXComponents from '../../components/MDXComponents';
+import { createClient } from 'contentful';
 
 export default function Post({ metadata, source, views }) {
   return (
@@ -20,9 +20,9 @@ export default function Post({ metadata, source, views }) {
       <NextSeo
         title={'Srijan | Blog | ' + metadata.title}
         description={metadata.summary}
-        canonical={`https://srijansrivastava.tech/blog/${metadata.slug}`}
+        canonical={`https://srijansrivastava.com/blog/${metadata.slug}`}
         openGraph={{
-          url: `https://srijansrivastava.tech/blog/${metadata.slug}`,
+          url: `https://srijansrivastava.com/blog/${metadata.slug}`,
           site_name: 'Srijan Srivastava',
           title: metadata.title,
           description: metadata.summary,
@@ -44,7 +44,7 @@ export default function Post({ metadata, source, views }) {
           { property: 'twitter:card', content: 'summary_large_image' },
           {
             property: 'twitter:url',
-            content: `https://srijansrivastava.tech/blog/${metadata.slug}`,
+            content: `https://srijansrivastava.com/blog/${metadata.slug}`,
           },
           { property: 'twitter:title', content: metadata.title },
           { property: 'twitter:description', content: metadata.summary },
@@ -52,7 +52,7 @@ export default function Post({ metadata, source, views }) {
         ]}
       />
       <ArticleJsonLd
-        url={`https://srijansrivastava.tech/blog/${metadata.slug}`}
+        url={`https://srijansrivastava.com/blog/${metadata.slug}`}
         title={metadata.title}
         images={[metadata.image]}
         datePublished={metadata.date}
@@ -133,7 +133,7 @@ export default function Post({ metadata, source, views }) {
   );
 }
 
-const client = require('contentful').createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
@@ -144,10 +144,15 @@ export async function getStaticPaths() {
   });
   return {
     paths: data.items.map((item) => ({
-      params: { slug: item.fields.slug },
+      params: { slug: (item.fields as { slug: string }).slug },
     })),
     fallback: false,
   };
+}
+
+export interface IArticle {
+  readingTime: string;
+  body?: string;
 }
 
 export async function getStaticProps({ params }) {
@@ -156,12 +161,13 @@ export async function getStaticProps({ params }) {
     'fields.slug': params.slug,
   });
 
-  const article = data.items[0].fields;
-  const source = article.body;
+  const article = data.items[0]?.fields as IArticle;
+  const source = article?.body;
   article.readingTime = readingTime(source).text;
   const mdxSource = await serialize(source, {
     mdxOptions: {
       rehypePlugins: [mdxPrism],
+      development: false,
     },
   });
 

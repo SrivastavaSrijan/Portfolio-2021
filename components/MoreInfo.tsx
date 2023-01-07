@@ -11,9 +11,7 @@ import {
   ModalBody,
   ModalFooter,
   ModalContent,
-  ModalHeader,
   ModalCloseButton,
-  Button,
   PopoverBody,
 } from '@chakra-ui/react';
 
@@ -69,7 +67,7 @@ export const MoreInfo = ({ text, body, footerText }) => {
             onClickCapture={() => handleHover(`about_${text}`)}
           >
             {text}
-          </Text>{' '}
+          </Text>
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
@@ -91,7 +89,7 @@ export const MoreInfo = ({ text, body, footerText }) => {
             </ModalContent>
           </Modal>
         </>
-      )}{' '}
+      )}
     </>
   );
 };
