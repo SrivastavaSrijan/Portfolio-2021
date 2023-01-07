@@ -19,7 +19,7 @@ export default function Index({ projects, articles }) {
           pageDesc="Here, you can check out Srijan Srivastava's projects, learn about his experiences, gauge his skills and know why he is the perfect candidate you’re looking for."
         />
       </Head>
-      <Container enableTransition={true}>
+      <Container>
         <Stack
           as="main"
           spacing={{ base: '10vh', md: '96px' }}

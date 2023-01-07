@@ -19,7 +19,7 @@ export default function Index({ articles }) {
   const isLargerThan1024 = useMediaQuery(1024);
 
   return (
-    <Container enableTransition={true}>
+    <Container>
       <Head>
         <title>Srijan | Blog</title>
         <OpenGraphTags

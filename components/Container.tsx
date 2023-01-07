@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import { colors } from '../styles/theme';
 
 /** Root container for the application, contains the Navbar, Body and the footer */
-const Container = ({ enableTransition, children }) => {
+const Container = ({ children }) => {
   useEffect(() => {
     ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE);
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -13,7 +13,7 @@ const Container = ({ enableTransition, children }) => {
 
   return (
     <>
-      <Navbar enableTransition={enableTransition} />
+      <Navbar />
       <Flex as="main" justifyContent="center" flexDirection="column">
         {children}
       </Flex>

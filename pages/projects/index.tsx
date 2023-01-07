@@ -19,7 +19,7 @@ export default function Projects({ projects }) {
 
   return (
     <>
-      <Container enableTransition={true}>
+      <Container>
         <Head>
           <title>Srijan | Projects</title>
           <OpenGraphTags

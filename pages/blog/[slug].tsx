@@ -62,7 +62,7 @@ export default function Post({ metadata, source, views }) {
         publisherLogo="media/favicon.webp"
         description={metadata.summary}
       />
-      <Container enableTransition={true}>
+      <Container>
         <Stack my="15vh" justifyContent="center" alignItems="center">
           <Stack
             w={['100vw', '95vw']}

@@ -42,6 +42,7 @@
     "remark-slug": "^7.0.1"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^13.1.1",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "8.30.0",
