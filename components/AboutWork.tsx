@@ -75,48 +75,14 @@ export const AboutWork = () => {
             />
             , a non-judgemental, accessible and confidential digital platform
             for women. We're a healthcare startup and our services are available
-            <MoreInfo
-              text=" online, "
-              body={
-                <Text fontSize="display5" color="textSecondary">
-                  Taking ownership of these massive projects completely changed
-                  the way I look at Frontend Development.
-                  <br />
-                  <br />
-                  <Link
-                    href="https://proactiveforher.com/health/lab-tests/"
-                    isExternal
-                  >
-                    💉 Lab Tests - Curated medical tests
-                    <Icon as={FaLink} boxSize={3} mx="4px" />
-                  </Link>
-                  <br />
-                  <br />
-                  <Link
-                    href="https://proactiveforher.com/health/experts/"
-                    isExternal
-                  >
-                    🩺 Teleconsultation Booking - Talk to an expert gynaec at
-                    your convenience.
-                    <Icon as={FaLink} boxSize={3} mx="4px" />
-                  </Link>
-                  <br />
-                  <br />
-                  <Link
-                    href="https://proactiveforher.com/health/care-packages/"
-                    isExternal
-                  >
-                    💆🏾‍♀️ Care Packages - Bundles of our services
-                    <Icon as={FaLink} boxSize={3} mx="4px" />
-                  </Link>
-                </Text>
-              }
-              footerText="Check us out!"
-            />
+           online,
             at-home and
             <MoreInfo
               text=" in-clinic."
-              body={<Text fontSize="display5" color="textSecondary"></Text>}
+              body={  <ReactiveImage
+                imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/6clWt5kR2UcGSV7MMkZ4G2/1fd132b79d8609c59a6600e93ae09fc3/PFH_BLR.jpg?h=450"
+                alt="Pasta"
+              />}
               footerText="Our flagship clinic in Indiranagar, Bengaluru."
             />
             <br />
@@ -134,7 +100,41 @@ export const AboutWork = () => {
               footerText="What impact have we made?"
             />
             and joining Proactive For Her as a Software Development Engineer II
-            was a transformative role. In the first month itself, I got to
+            was a  <MoreInfo
+              text=" transformative "
+              body={
+                <Text fontSize="display5" color="textSecondary">
+                  Taking ownership of these massive projects completely changed
+                  the way I look at Frontend Development.
+                  <br />
+                  <Link
+                    href="https://proactiveforher.com/health/lab-tests/"
+                    isExternal
+                  >
+                    💉 Lab Tests - Curated medical tests
+                    <Icon as={FaLink} boxSize={3} mx="4px" />
+                  </Link>
+                  <br />
+                  <Link
+                    href="https://proactiveforher.com/health/experts/"
+                    isExternal
+                  >
+                    🩺 Teleconsultation Booking - Talk to an expert gynaec at
+                    your convenience.
+                    <Icon as={FaLink} boxSize={3} mx="4px" />
+                  </Link>
+                  <br />
+                  <Link
+                    href="https://proactiveforher.com/health/care-packages/"
+                    isExternal
+                  >
+                    💆🏾‍♀️ Care Packages - Bundles of our services
+                    <Icon as={FaLink} boxSize={3} mx="4px" />
+                  </Link>
+                </Text>
+              }
+              footerText="Check us out!"
+            /> role. In the first month itself, I got to
             architect a{' '}
             <MoreInfo
               text=" massive NextJs project "

@@ -17,8 +17,8 @@ export default function About() {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12}>
         <ImageWithSvg
           svgId="150717"
-          imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/7Km0fN5XuzcIigFrwAFKMh/4854be1a0a38586142b802d2b5527b7d/IMG20220306211349__1_.jpg"
-          imageSize={{ base: '275px', lg: '275px' }}
+          imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/36XDujqnCM6NQkZUg2PEPi/aacb13e5efaff05102e5c262f8d70ca6/Srijan_Srivastava_-_Portfolio_Image_1.webp"
+          imageSize={{ base: '255px', lg: '255px' }}
           delay={0}
         />
         <AboutMe />
