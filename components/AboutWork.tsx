@@ -75,14 +75,15 @@ export const AboutWork = () => {
             />
             , a non-judgemental, accessible and confidential digital platform
             for women. We're a healthcare startup and our services are available
-           online,
-            at-home and
+            online, at-home and
             <MoreInfo
               text=" in-clinic."
-              body={  <ReactiveImage
-                imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/6clWt5kR2UcGSV7MMkZ4G2/1fd132b79d8609c59a6600e93ae09fc3/PFH_BLR.jpg?h=450"
-                alt="Pasta"
-              />}
+              body={
+                <ReactiveImage
+                  imageSrc="https://images.ctfassets.net/hq1jrfsbgjdg/6clWt5kR2UcGSV7MMkZ4G2/1fd132b79d8609c59a6600e93ae09fc3/PFH_BLR.jpg?h=450"
+                  alt="Pasta"
+                />
+              }
               footerText="Our flagship clinic in Indiranagar, Bengaluru."
             />
             <br />
@@ -100,7 +101,8 @@ export const AboutWork = () => {
               footerText="What impact have we made?"
             />
             and joining Proactive For Her as a Software Development Engineer II
-            was a  <MoreInfo
+            was a{' '}
+            <MoreInfo
               text=" transformative "
               body={
                 <Text fontSize="display5" color="textSecondary">
@@ -134,8 +136,8 @@ export const AboutWork = () => {
                 </Text>
               }
               footerText="Check us out!"
-            /> role. In the first month itself, I got to
-            architect a{' '}
+            />{' '}
+            role. In the first month itself, I got to architect a
             <MoreInfo
               text=" massive NextJs project "
               body={
