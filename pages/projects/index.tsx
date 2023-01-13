@@ -98,11 +98,11 @@ const client = createClient({
 export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: 'projects',
-    order: 'sys.createdAt',
+    order: 'sys.updatedAt',
   });
   return {
     props: {
-      projects: data.items,
+      projects: data.items.reverse(),
     },
   };
 }

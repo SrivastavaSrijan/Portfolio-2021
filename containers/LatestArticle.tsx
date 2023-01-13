@@ -1,5 +1,5 @@
 import { Heading } from '@chakra-ui/layout';
-import { Box, Flex, Link, Stack, Text, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Stack, Text, SimpleGrid, Link } from '@chakra-ui/react';
 import dateFormat from 'dateformat';
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible';
 import FadeInWhenVisible from '../hook/FadeInWhenVisible';
@@ -41,41 +41,47 @@ export default function LatestArticle({ articles }) {
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={{ base: 2, md: 4 }}>
         {articles.map((article, index) => (
           <FadeInWhenVisible key={index}>
-            <Link
-              as="div"
-              href={'/blog/' + article.fields.slug}
-              _hover={{ textDecoration: 'none' }}
-              _focus={{ outline: 'none' }}
-              w="100%"
+            <NextLink
+              href={'/blog/' + article?.fields?.slug || ''}
+              passHref
+              legacyBehavior
             >
-              <Stack
-                direction="column"
-                alignItems="flex-start"
-                justifyContent="flex-start"
-                spacing={2}
-                bg="secondary"
-                borderWidth="0px"
-                px={5}
-                py={10}
-                rounded="lg"
+              <Link
+                as="div"
+                href={'/blog/' + article?.fields?.slug || ''}
+                _hover={{ textDecoration: 'none' }}
+                _focus={{ outline: 'none' }}
+                w="100%"
               >
-                <Text
-                  color="textPrimary"
-                  fontSize={{ base: 'md', md: 'xl' }}
-                  fontWeight="bold"
-                  cursor="pointer"
+                <Stack
+                  direction="column"
+                  alignItems="flex-start"
+                  justifyContent="flex-start"
+                  spacing={2}
+                  bg="secondary"
+                  borderWidth="0px"
+                  px={5}
+                  py={10}
+                  rounded="lg"
                 >
-                  {article.fields.title}
-                </Text>
-                <Text color="textSecondary" fontSize="sm">
-                  {dateFormat(Date.parse(article.fields.date), 'mmmm d yyyy')}{' '}
-                  <Box as="span" fontSize="xs">
-                    &bull;
-                  </Box>{' '}
-                  2 min read
-                </Text>
-              </Stack>
-            </Link>
+                  <Text
+                    color="textPrimary"
+                    fontSize={{ base: 'md', md: 'xl' }}
+                    fontWeight="bold"
+                    cursor="pointer"
+                  >
+                    {article.fields.title}
+                  </Text>
+                  <Text color="textSecondary" fontSize="sm">
+                    {dateFormat(Date.parse(article.fields.date), 'mmmm d yyyy')}{' '}
+                    <Box as="span" fontSize="xs">
+                      &bull;
+                    </Box>{' '}
+                    2 min read
+                  </Text>
+                </Stack>
+              </Link>
+            </NextLink>
           </FadeInWhenVisible>
         ))}
       </SimpleGrid>
